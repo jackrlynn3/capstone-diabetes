@@ -3,5 +3,5 @@ Chen et al. (2018): https://zenodo.org/record/4997196#.YuQtrvHMI-Q
 Da Silva (2018): https://www.kaggle.com/datasets/johndasilva/diabetes
 Pranabananda Sahu (2019): https://data.mendeley.com/datasets/jf429jpgwt/1
 World Bank (2021): https://data.worldbank.org/indicator/SH.STA.DIAB.ZS?view=chart
-Jaeb Center For Health Research (2010): https://public.jaeb.org/dataset/563
-CDC (2013): https://nccd.cdc.gov/dnpao_dtm/rdPage.aspx?rdReport=DNPAO_DTM.ExploreByTopic&islClass=PA&islTopic=PA1&go=GO
+CGM Data - Jaeb Center For Health Research (2010): https://public.jaeb.org/dataset/563
+Exercise Data - CDC (2013): https://nccd.cdc.gov/dnpao_dtm/rdPage.aspx?rdReport=DNPAO_DTM.ExploreByTopic&islClass=PA&islTopic=PA1&go=GO
