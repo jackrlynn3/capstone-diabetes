@@ -5,3 +5,7 @@ Pranabananda Sahu (2019): https://data.mendeley.com/datasets/jf429jpgwt/1
 World Bank (2021): https://data.worldbank.org/indicator/SH.STA.DIAB.ZS?view=chart
 CGM Data - Jaeb Center For Health Research (2010): https://public.jaeb.org/dataset/563
 Exercise Data - CDC (2013): https://nccd.cdc.gov/dnpao_dtm/rdPage.aspx?rdReport=DNPAO_DTM.ExploreByTopic&islClass=PA&islTopic=PA1&go=GO
+U.S. Chronic Disease Indicators: Diabetes CDC (2021): https://chronicdata.cdc.gov/Chronic-Disease-Indicators/U-S-Chronic-Disease-Indicators-Diabetes/f8ti-h92k/data
+Food Security in the U.S. USDA (2019) https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s/interactive-charts-and-highlights/
+American Community Survey: S1901:  INCOME IN THE PAST 12 MONTHS (IN 2020 INFLATION-ADJUSTED DOLLARS) U.S. Census Bureau (2020): https://data.census.gov/cedsci/table?q=education%20by%20state&tid=ACSDT5Y2020.B06009
+American Community Survey: B06009:  PLACE OF BIRTH BY EDUCATIONAL ATTAINMENT IN THE UNITED STATES U.S. Census Bureau (2020): https://data.census.gov/cedsci/table?q=education%20by%20state&tid=ACSDT5Y2020.B06009
