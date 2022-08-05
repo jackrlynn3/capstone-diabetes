@@ -1,8 +1,5 @@
--- Make sure in the right database
-USING group5database;
-GO
-
 -- Drop exisiting versions of the database
+DROP TABLE IF EXISTS NHAINESStat;
 DROP TABLE IF EXISTS CensusStat;
 DROP TABLE IF EXISTS [State];
 DROP TABLE IF EXISTS Metric;
@@ -87,4 +84,31 @@ CREATE TABLE CensusStat (
     demoID INT NOT NULL, -- PK
     [year] INT NOT NULL,
     [value] DECIMAL(5, 2)
+);
+
+-- Create NHAINESStat table
+
+CREATE TABLE NHAINESStat (
+    nhainesID INT NOT NULL, -- PK
+    sbp decimal(4, 1) NOT NULL,
+    dbp decimal(4, 1) NOT NULL,
+    drinkerID INT NOT NULL, -- FK
+    hypertensive BINARY NULL,
+    multihypertensive BINARY NULL,
+    diabetes BINARY NOT NULL,
+    prediabetes BINARY NULL,
+    diabetesRisk BINARY NULL,
+    mealsAtHome DECIMAL(3, 1) NOT NULL,
+    familyMonthlyPoverty DECIMAL(5, 2) NOT NULL,
+    smokerID INT NOT NULL, -- FK
+    height DECIMAL(3, 1) NOT NULL,
+    [weight] DECIMAL(5, 1) NOT NULL,
+    sexID INT NOT NUll, -- FK
+    age INT NOT NULL,
+    ethnicityID INT NOT NULL, -- FK
+    educationID INT NOT NULL, -- FK
+    incomeID INT NOT NULL, -- FK
+    bmi DECIMAL(5, 3) NOT NULL,
+    CONSTRAINT nhainesID
+        UNIQUE (nhainesID)
 );
