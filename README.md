@@ -27,6 +27,22 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 <a name="datasets"></a>
 ## Datasets
 
+[**"A Randomized Clinical Trial to Assess the Efficacy and Safety of Continuous Glucose Monitoring in Youth < 8 with Type 1 Diabetes", from JAEB Center:**](https://public.jaeb.org/dataset/563) Medical profiles and blood glucose traces from Type-1 diabetes patients in clinical trial for blood glucose monitoring device; used to track blood glucose levels in real time and predict hazardous blood glucose spikes using deep learning
+
+[**Aerobic Activity by State:**](https://www.cdc.gov/nccdphp/dnpao/data-trends-maps/index.html) CDC ongoing study investigating health trends by state in the US; used to assess the proportion of state populations that participate in at least 150 minutes of aerobic activity weekly
+
+[**"Association of body mass index and age with incident diabetes in Chinese adults: a population-based cohort study", from Ruici Healthcare:**](https://datadryad.org/stash/dataset/doi:10.5061/dryad.ft8750v) Large Chinese sample (>200,000 subjects) describing medical vitals and diabetes diagnoses; used to train machine learning model to predict diabetes diagnoses based on basic medical measurements
+
+[**B06009: Place of Birth by Educational Attainment in the United States:**](https://data.census.gov/cedsci/table?q=education%20by%20state&tid=ACSDT5Y2020.B06009) U.S. Census data describing educational attainment by state; used to assess potential connections between educational attainment and diabetes diagnoses
+
+[**Food Security in the US:**](https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s/interactive-charts-and-highlights/) U.S. Department of Agriculture dataset tracking food security by state; used to assess potential connections between food security by states and diabetes diagnoses
+
+[**National Health and Nutrition Examination Survey (NHAINES):**](https://www.kaggle.com/datasets/cdc/national-health-and-nutrition-examination-survey) CDC program designed to assess health and nutritional conditions of adults in the United States; used to assess the health statuses of demographic groups
+
+[**S1901: Income in the Past 12 Months (In 2020 Inflation-Adjusted Dollars):**](https://data.census.gov/cedsci/table?q=S1901&tid=ACSST5Y2020.S1901) U.S. Census data describing income brackets by state; used to assess potential connections between income brackets and diabetes diagnoses 
+
+[**U.S. Chronic Disease Indicators: Diabetes:**](https://chronicdata.cdc.gov/Chronic-Disease-Indicators/U-S-Chronic-Disease-Indicators-Diabetes/f8ti-h92k/data) CDC tracking of diabetes prevalence by state, race, and ethnicty; used to describe what demographic groups are make up the United States diabetic population
+
 <a name="project-structure"/></a>
 ## Project Structure
 
