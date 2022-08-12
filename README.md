@@ -15,7 +15,37 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 8. Can we predict warning notifications for dangerous blood glucose spikes based on real time blood glucose levels of Type-1 diabetes patients? 
 
 ### Table of Contents
+1. **[Datasets](#datasets)**
+2. **[Project Structure](#project-structure)**
+3. **[File Structure](#file-structure)**
+4. **[Machine Learning](#machine-learning)**
+5. **[Deep Learning](#deep-learning)**
+6. **[Visualizations](#visualizations)**
+7. **[Website Deployment](#website-deployment)**
+8. **[References](#references)**
 
+<a name="datasets"></a>
+### Datasets
+
+<a name="project-structure"/></a>
+### Project Structure
+
+<a name="file-structure"/></a>
+### File Structure
+
+<a name="machine-learning"/></a>
+### Machine Learning
+
+<a name="deep-learning"/></a>
+### Deep Learning
+
+<a name="visualizations"/></a>
+### Visualizations
+
+<a name="website-deployment"/></a>
+### Website Deployment
+
+<a name="references"/></a>
 ### References
 
 [1] Institute for Health Metrics and Evaluation. (2019). GBD compare. Data Visualizations. Retrieved August 8, 2022, from https://vizhub.healthdata.org/gbd-compare/
