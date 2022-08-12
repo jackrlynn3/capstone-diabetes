@@ -4,7 +4,7 @@ Non-communicable diseases dominate disease burden within the developed world; di
 
 This capstone project is the creation of [**Temesgen Fekadu**](https://github.com/TemesgenFekadu01), [**Jack Lynn**](https://github.com/jackrlynn3), [**Hayden Muscha**](https://github.com/HaydenKMuscha), and [**Sam Wainright**](https://github.com/wainrightsamantha), in coordination with the [**Dev10 Data Bootcamp**](https://www.genesis10.com/).
 
-#### Essential Questions
+### Essential Questions
 1. Which demographics are most likely to develop diabetes in the US?  
 2. What measurable bodily attributes contribute to the indication of diabetes?  
 3. How are diabetes patients' blood glucose levels tracked in real time?  
@@ -14,7 +14,7 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 7. Can we predict diabetes diagnoses based on readily available medical vitals, such as blood pressure, mineral levels, and body mass index? 
 8. Can we predict warning notifications for dangerous blood glucose spikes based on real time blood glucose levels of Type-1 diabetes patients? 
 
-### Table of Contents
+## Table of Contents
 1. **[Datasets](#datasets)**
 2. **[Project Structure](#project-structure)**
 3. **[File Structure](#file-structure)**
@@ -25,28 +25,28 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 8. **[References](#references)**
 
 <a name="datasets"></a>
-### Datasets
+## Datasets
 
 <a name="project-structure"/></a>
-### Project Structure
+## Project Structure
 
 <a name="file-structure"/></a>
-### File Structure
+## File Structure
 
 <a name="machine-learning"/></a>
-### Machine Learning
+## Machine Learning
 
 <a name="deep-learning"/></a>
-### Deep Learning
+## Deep Learning
 
 <a name="visualizations"/></a>
-### Visualizations
+## Visualizations
 
 <a name="website-deployment"/></a>
-### Website Deployment
+## Website Deployment
 
 <a name="references"/></a>
-### References
+## References
 
 [1] Institute for Health Metrics and Evaluation. (2019). GBD compare. Data Visualizations. Retrieved August 8, 2022, from https://vizhub.healthdata.org/gbd-compare/
 
