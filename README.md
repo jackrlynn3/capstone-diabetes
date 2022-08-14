@@ -119,6 +119,16 @@ The SQL database is hosted on Azure SQL Databases and is restricted access to th
 <a name="deep-learning"/></a>
 ## Deep Learning
 
+Deep learning (DL) is used to predict when Type I diabetes patients have a hazardous blood glucose spikes (defined here as 300 mmol/L) at before they happen. The tools used to form the DL models are `TensorFlow`, and Google Colab.
+
+[`TensorFlow`](https://www.tensorflow.org/) is the choosen libray for DL because it contains a wide breadth of tools for training all types of DL models quickly and simply; additionally, all major DL layer types are covered by the library. `.ipynb` in [Google Colab](https://colab.research.google.com/?utm_source=scs-index) is the primary training space for DL models primarily for its GPU-accelerated training capabilities. Using `TensorFlow`, training DL networks with GPU capacities can reduce training time by around 85%, with much less memory and RAM demands. [[10]](https://datamadness.github.io/TensorFlow2-CPU-vs-GPU)
+
+Given that this is a time series problem, recurrent neural network (RNN) layers are used. The two layers tested are long short-term memory (LSTM) and gated recurrent unit (GRU); RNN layers are not tested do their backpropagation and long-term memory issues. All models are created using `TensorFlow`'s `Sequential` model function, in which layers are created in sequence. [Two model frameworks]() were initially consistered: (1) predicting problematic peaks and their preceding upslopes; and (2) predicting blood glucose values a certain number of timesteps before. Ultimately, the latter model structure is chosen due its lower loss values and consistency.
+
+<INCLUDE DIAGRAM FOR BEST MODEL>
+
+Several different models parameter sets then are tested, optimizing for [layer composition](), [layer depth](), [training size](), [window size](), and [time delay](). The [best model]() is then trained and its parameters and structure are saved [here](). This parameter set can then be read later into website for real time blood glucose spikes.
+
 <a name="visualizations"/></a>
 ## Visualizations
 
@@ -144,4 +154,6 @@ The SQL database is hosted on Azure SQL Databases and is restricted access to th
 
 [8] Chen, Y., Zhang, X.-P., Yuan, J., Cai, B., Wang, X.-L., Wu, X.-L., … Li, X.-Y. (2018, August 21). Data from: Association of body mass index and age with incident diabetes in Chinese adults: a population-based cohort study. Retrieved August 5, 2022, from Datadryad website: https://doi.org/10.5061/dryad.ft8750v 
 
-[9] JAEB Center for Health Research. (2019). A Randomized Clinical Trial to Assess the Efficacy and Safety of Continuous Glucose Monitoring in Youth < 8 with Type 1 Diabetes. Retrieved August 5, 2022, from JAEB website: https://public.jaeb.org/dataset/563 
+[9] JAEB Center for Health Research. (2019). A Randomized Clinical Trial to Assess the Efficacy and Safety of Continuous Glucose Monitoring in Youth < 8 with Type 1 Diabetes. Retrieved August 5, 2022, from JAEB website: https://public.jaeb.org/dataset/563
+
+[10] DataMadness. (2019, October 27). Tensorflow 2 - CPU vs GPU performance comparison. DATAmadness. Retrieved August 14, 2022, from https://datamadness.github.io/TensorFlow2-CPU-vs-GPU 
