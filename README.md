@@ -76,11 +76,24 @@ _`CGM Data Stream` structure on Azure Data Factory._
 
 `CGM Data Stream` updates only the  `CGM_Stream` database. The data stream contains separation activations of producer and consumer Kafka files; the consumer is time offset. This data stream is used to simulate the follow of blood glucose readings in real time.
 
-### Machine Learning
+### Analysis of Data
 
-### Visualizations
+Three analysis methods are used to synthesize the data to create a holistic narrative around diabetes care in the U.S.: (1) visualizations, (2) machine learning, and (3) deep learning. Visualizations are stored in the [`/visualizations/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/visualizations) directory and produced using `pandas` library in Python. All learning models are stored in the [`/models/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/models) directory, each with their own subdirectories. Machine learning models are trained on local devices and then uploaded to the website interface while deep learning models are trained using Google Colab's parallelized GPU computing services. All visualizations and learning models are finally deployed to a `Dash`-enabled website hosted on `Heroku`.
 
-### Website Presentation
+The website can be found [here]().
+
+*Full descriptions of [machine learning](#machine-learning), [deep learning](#deep-learning), [visualizations](#visualizations), and [website deployment](#website-deployment) can be seen below.*
+
+### Reporting
+
+The procedures and findings of this project can be found in one of several reports found under [`/presentation/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/presentation) and [`/report/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/report) directories. Summaries of the reports are the following:
+
+1. [`ExecutiveSummary.pdf`:](https://github.com/jackrlynn3/capstone-diabetes/blob/main/report/ExecutiveSummary.pdf) Description of the high-level aims of the project, including introduction to project, key questions, datasets, and sources
+2. [`ExploratoryQuestions.pdf`:]() Description of all essential exploratory questions that are answered by this project.
+3. [`RepeatableETLReport.pdf`:](https://github.com/jackrlynn3/capstone-diabetes/blob/main/report/RepeatableETLReport.pdf) In-depth description of ETL process to get from raw data sourcing to loaded SQL database.
+4. [`VisualizationsDashboardNapkinsAndFeedback.pdf`:](https://github.com/jackrlynn3/capstone-diabetes/blob/main/report/VisualizationsDashboardNapkinsAndFeedback.pdf) Napkin drawing for all dashboards used in the project and their respective peer feedback.
+5. [`ProjectTechnicalReport.pdf`](): Full report describing methods, results, and analysis of all methods within this project.
+6. [`CapstonePresentationSlides.pdf`](): Presentation slide deck describing the results of this project.
 
 <a name="sql-database"/></a>
 ## SQL Database
