@@ -78,7 +78,7 @@ _`CGM Data Stream` structure on Azure Data Factory._
 
 ### Analysis of Data
 
-Three analysis methods are used to synthesize the data to create a holistic narrative around diabetes care in the U.S.: (1) visualizations, (2) machine learning, and (3) deep learning. Visualizations are stored in the [`/visualizations/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/visualizations) directory and produced using `pandas` library in Python. All learning models are stored in the [`/models/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/models) directory, each with their own subdirectories. Machine learning models are trained on local devices and then uploaded to the website interface while deep learning models are trained using Google Colab's parallelized GPU computing services. All visualizations and learning models are finally deployed to a `Dash`-enabled website hosted on `Heroku`.
+Three analysis methods are used to synthesize the data to create a holistic narrative around diabetes care in the U.S.: (1) visualizations, (2) machine learning, and (3) deep learning. Visualizations are stored in the [`/visualizations/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/visualizations) directory and produced using `pandas` library in Python. All learning models are stored in the [`/models/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/models) directory, each with their own subdirectories. Machine learning models are trained on local devices and then uploaded to the website interface while deep learning models are trained using Google Colab's parallelized GPU computing services. All visualizations and learning models are finally deployed to a `Dash`-enabled website hosted on Heroku.
 
 The website can be found [here]().
 
@@ -97,6 +97,21 @@ The procedures and findings of this project can be found in one of several repor
 
 <a name="sql-database"/></a>
 ## SQL Database
+
+![erd drawio](https://user-images.githubusercontent.com/105175430/184557987-8e5fe866-120e-4fef-bf3a-3e14bdf5ed56.png)
+
+*ERD describing the SQL file structure.*
+
+The SQL database is hosted on Azure SQL Databases and is restricted access to those with Dev10 credentials; please consult Jack Lynn (jackrlynn@gmail.com) to get the `config.py` to get access to database. The following tables belong to the dataset:
+
+1. **`CensusStat`:** This table is a genaralized format to hold data for different demographic information using U.S. Census format. Each row has `year` and `value` describing the year and value that statistic is holding. This table is connected to three other tables via foreign keys: (1) `State` (`stateID`), which descibes where the statistic is describing; (2) `Metric` (`metricID`), which describes what the statistic is measuring; and (3) `Demographic` (`demoID`), which describes the demographic group the statistic belongs to.
+2. **`Demographic`:** This table holds all demographic groups used explored within project, including sex, race, ethnicity, smoking status, and more. `demo_group` describes the specific demographic of the group whereas `category` describes the type of demographic that is being tracked.
+3. **`DiabetesPop`:** This table holds medical characteristics of a population in which some people are diabetic (`diabetes`). This table has a number of measurable medical vitals, including age (`age`), diastolic and systolic blood pressure (`dbp`/`sbp`), and others. Additionally, four foreign keys--`sexID`, `smokerID`, `drinkerID`, and `famhistID`--all correspond to instances in `Demographic` describing sex, smoking status, drinking status, and family history of diabetes, respectively.
+4. **`GlucoseMeter`:** This table holds all blood glucose readings (`glucose_lvl`) and their corresponding times (`time`) and patients (`ptID`). `ptID` is connected to the `Patient` table as a foreign key to hold patient demographics.
+5. **`Metric`:** This table descibes the type of statistics being tracked by a `CensusStat`. `metric` is a description of what the statistic measures, and `unit` is the units to that statistic.
+6. **`NHAINESStat`:** This table follows similar structure to `DiabetesPop` but rather uses data from the NHAINES study. It similarly has foreign keys to describe demographic groups: drinking status (`drinkerID`), sex (`sexID`), smoking status (`smokerID`), ethnicity (`ethnicityID`), educational level (`educationID`), and income bracket (`incomeID`).
+7. **`Patient`:** This table is a companion to `GlucoseMeter` and describes the demographics of the readings. Five foreign keys--`sexID`, `raceID`, `ethnicityID`, `educationID`, and `smokerID`--correspond to the `Demographic` table and describe sex, race, ethnicity, education level, and smoking status, respectively.
+8. **`State`:** This table holds name of states (`name`) and their corresponding abbreviations (`stateID`).
 
 <a name="machine-learning"/></a>
 ## Machine Learning
