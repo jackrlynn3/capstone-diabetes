@@ -17,7 +17,7 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 ## Table of Contents
 1. **[Datasets](#datasets)**
 2. **[Project Structure](#project-structure)**
-3. **[File Structure](#file-structure)**
+3. **[SQL Database](#sql-database)**
 4. **[Machine Learning](#machine-learning)**
 5. **[Deep Learning](#deep-learning)**
 6. **[Visualizations](#visualizations)**
@@ -44,10 +44,43 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 [**U.S. Chronic Disease Indicators: Diabetes:**](https://chronicdata.cdc.gov/Chronic-Disease-Indicators/U-S-Chronic-Disease-Indicators-Diabetes/f8ti-h92k/data) CDC tracking of diabetes prevalence by state, race, and ethnicty; used to describe what demographic groups are make up the United States diabetic population
 
 <a name="project-structure"/></a>
-## Project Structure
+## Project & File Structure
 
-<a name="file-structure"/></a>
-## File Structure
+[Network Diagram](https://user-images.githubusercontent.com/105175430/184555367-4a6e7227-f7a0-404a-8064-5fc0ebe45f15.png)
+*Network diagram describing the flow and transformation of data and the tools used at each point.*
+
+#### Data Extraction, Transformation, and Loading
+
+*A full ETL description document can be found under [`/report/RepeatableETLReport.pdf`](https://github.com/jackrlynn3/capstone-diabetes/blob/main/report/RepeatableETLReport.pdf).*
+
+Data collections are sourced from the CDC, JAEB, Ruici Healthcare, U.S. Census Department, and U.S. Department of Agriculture; a full description of each dataset can be seen [here](#datasets). All datasets are downloaded directly from their respective websites and saved locally as `.csv` files.
+
+Each file is transformed using `.ipyn` notebooks run on local machines; these notebooks can be found in their dataset's respective directories under [`/datasets/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/datasets). The files heavily use the `numpy` and `pandas` libraries and typically conver the following transformations: (1) null fields, (2) column drops, (3) inconsistent/unusable typing, (4) outlier handling, and (5) schema simplifcation. Finally, all of these files are saved as `.csv` files and uploaded to this group's Azure Data Lake.
+
+Each file is then transformed again and loaded into Azure SQL Databases using Azure Databricks; a full description of the SQL schema can be found [here](#sql-database). Each respective database is first loaded into the Azure Database using SQL inquiries in Azure Data Studio, which can be found under [`/datasets/sql-queries/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/datasets/sql-queries). Kafka files in Azure Databricks then take in the corresponding `.csv` files from the Azure Data Lake, transforms them into the schema of the SQL database, and then loads this group's Azure SQL database; these Kafka files can be found in [`/datasets/kafka/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/datasets/kafka).
+
+#### Streaming
+
+All data streaming is handled through Azure Data Factories. Two streams handle the updates of all databases.
+
+<img width="948" alt="Screen Shot 2022-08-14 at 16 23 14" src="https://user-images.githubusercontent.com/105175430/184555453-7e256196-17a3-467b-b29c-2abd4f7686e9.png">
+*`Static Data Stream` structure on Azure Data Factory.*
+
+`Static Data Stream` updates the `CensusStat`, `Demographic`, `DiabetesPop`, `GlucoseMeter`, `Metric`, `NHAINESStat`, and `State` SQL databases. Each update follows the standard structure of first ensuring that the database's corresponding CSV file is present in the Azure Data Lake and then executing its corresponding Kafka file to load the file. A serielized order is followed because certain Kafka files edited the same SQL databases and need to be run a specific order. This data stream is triggered every 24 hours, reflecting any changes made to the base data on a daily basis.
+
+<img width="345" alt="Screen Shot 2022-08-14 at 16 22 15" src="https://user-images.githubusercontent.com/105175430/184555471-c68f0271-631c-47e0-b5c2-028951ffad88.png">
+*`CGM Data Stream` structure on Azure Data Factory.*
+
+`CGM Data Stream` updates only the  `CGM_Stream` database. The data stream contains separation activations of producer and consumer Kafka files; the consumer is time offset. This data stream is used to simulate the follow of blood glucose readings in real time.
+
+#### Machine Learning
+
+#### Visualizations
+
+#### Website Presentation
+
+<a name="sql-database"/></a>
+## SQL Database
 
 <a name="machine-learning"/></a>
 ## Machine Learning
