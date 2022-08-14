@@ -127,7 +127,7 @@ Given that this is a time series problem, recurrent neural network (RNN) layers 
 
 <INCLUDE DIAGRAM FOR BEST MODEL>
 
-Several different models parameter sets then are tested, optimizing for [layer composition](), [layer depth](), [training size](), [window size](), and [time delay](). The [best model]() is then trained and its parameters and structure are saved [here](). This parameter set can then be read later into website for real time blood glucose spikes.
+Several different models parameter sets then are tested, optimizing for [layer composition](), [layer depth](), [training size](), [window size](), and [time delay](). The [best model]() is then trained and its parameters and structure are saved [here](). This parameter set can then be read later into our website for real time blood glucose spike predictions.
 
 <a name="visualizations"/></a>
 ## Visualizations
