@@ -46,9 +46,9 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 <a name="project-structure"/></a>
 ## Project & File Structure
 
-![network-diagram drawio](https://user-images.githubusercontent.com/105175430/184555543-f8817d0d-b054-4e4d-a8e0-3d44207b4c90.png)
+![network-diagram drawio](https://user-images.githubusercontent.com/105175430/184555690-c79eb433-fa29-4fcc-9773-e830424ff5b4.png)
 
-*Network diagram describing the flow and transformation of data and the tools used at each point.*
+_Network diagram describing the flow and transformation of data and the tools used at each point._
 
 ### Data Extraction, Transformation, and Loading
 
@@ -65,12 +65,12 @@ Each file is then transformed again and loaded into Azure SQL Databases using Az
 All data streaming is handled through Azure Data Factories. Two streams handle the updates of all databases.
 
 <img width="948" alt="Screen Shot 2022-08-14 at 16 23 14" src="https://user-images.githubusercontent.com/105175430/184555453-7e256196-17a3-467b-b29c-2abd4f7686e9.png">
-*`Static Data Stream` structure on Azure Data Factory.*
+_`Static Data Stream` structure on Azure Data Factory._
 
 `Static Data Stream` updates the `CensusStat`, `Demographic`, `DiabetesPop`, `GlucoseMeter`, `Metric`, `NHAINESStat`, and `State` SQL databases. Each update follows the standard structure of first ensuring that the database's corresponding CSV file is present in the Azure Data Lake and then executing its corresponding Kafka file to load the file. A serielized order is followed because certain Kafka files edited the same SQL databases and need to be run a specific order. This data stream is triggered every 24 hours, reflecting any changes made to the base data on a daily basis.
 
 <img width="345" alt="Screen Shot 2022-08-14 at 16 22 15" src="https://user-images.githubusercontent.com/105175430/184555471-c68f0271-631c-47e0-b5c2-028951ffad88.png">
-*`CGM Data Stream` structure on Azure Data Factory.*
+_`CGM Data Stream` structure on Azure Data Factory._
 
 `CGM Data Stream` updates only the  `CGM_Stream` database. The data stream contains separation activations of producer and consumer Kafka files; the consumer is time offset. This data stream is used to simulate the follow of blood glucose readings in real time.
 
