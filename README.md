@@ -46,10 +46,11 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 <a name="project-structure"/></a>
 ## Project & File Structure
 
-[Network Diagram](https://user-images.githubusercontent.com/105175430/184555367-4a6e7227-f7a0-404a-8064-5fc0ebe45f15.png)
+![network-diagram drawio](https://user-images.githubusercontent.com/105175430/184555543-f8817d0d-b054-4e4d-a8e0-3d44207b4c90.png)
+
 *Network diagram describing the flow and transformation of data and the tools used at each point.*
 
-#### Data Extraction, Transformation, and Loading
+### Data Extraction, Transformation, and Loading
 
 *A full ETL description document can be found under [`/report/RepeatableETLReport.pdf`](https://github.com/jackrlynn3/capstone-diabetes/blob/main/report/RepeatableETLReport.pdf).*
 
@@ -59,7 +60,7 @@ Each file is transformed using `.ipyn` notebooks run on local machines; these no
 
 Each file is then transformed again and loaded into Azure SQL Databases using Azure Databricks; a full description of the SQL schema can be found [here](#sql-database). Each respective database is first loaded into the Azure Database using SQL inquiries in Azure Data Studio, which can be found under [`/datasets/sql-queries/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/datasets/sql-queries). Kafka files in Azure Databricks then take in the corresponding `.csv` files from the Azure Data Lake, transforms them into the schema of the SQL database, and then loads this group's Azure SQL database; these Kafka files can be found in [`/datasets/kafka/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/datasets/kafka).
 
-#### Streaming
+### Streaming
 
 All data streaming is handled through Azure Data Factories. Two streams handle the updates of all databases.
 
@@ -73,11 +74,11 @@ All data streaming is handled through Azure Data Factories. Two streams handle t
 
 `CGM Data Stream` updates only the  `CGM_Stream` database. The data stream contains separation activations of producer and consumer Kafka files; the consumer is time offset. This data stream is used to simulate the follow of blood glucose readings in real time.
 
-#### Machine Learning
+### Machine Learning
 
-#### Visualizations
+### Visualizations
 
-#### Website Presentation
+### Website Presentation
 
 <a name="sql-database"/></a>
 ## SQL Database
