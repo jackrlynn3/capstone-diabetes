@@ -127,7 +127,7 @@ Given that this is a time series problem, recurrent neural network (RNN) layers 
 
 <INCLUDE DIAGRAM FOR BEST MODEL>
 
-Several different models parameter sets then are tested, optimizing for [layer composition](), [layer depth](), [training size](https://github.com/jackrlynn3/capstone-diabetes/blob/main/models/deep_learning/optimization/diabetes_DL_training_test.ipynb), [window size](), and [time delay](). The [best model](https://github.com/jackrlynn3/capstone-diabetes/blob/main/models/deep_learning/diabetes_DL_final_model.ipynb) is then trained and its parameters and structure are saved [here](). This parameter set can then be read later into our website for real time blood glucose spike predictions.
+Several different models parameter sets then are tested, optimizing for [layer composition](), [layer depth](), [training size](https://github.com/jackrlynn3/capstone-diabetes/blob/main/models/deep_learning/optimization/diabetes_DL_training_test.ipynb), [window size](), and [time delay](). The [best model](https://github.com/jackrlynn3/capstone-diabetes/blob/main/models/deep_learning/diabetes_DL_final_model.ipynb) is then trained and its parameters and structure are saved [here](https://github.com/jackrlynn3/capstone-diabetes/tree/main/models/deep_learning/saved-models/optimum_model). This parameter set can then be read later into our website for real time blood glucose spike predictions.
 
 <a name="visualizations"/></a>
 ## Visualizations
