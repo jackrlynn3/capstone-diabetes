@@ -57,13 +57,13 @@ layout = html.Div(
         ),  
         dbc.Row(
             [
-                dbc.Col(html.H1("Income Brackets By Percentage of Population by State",
+                dbc.Col(html.H4("Income Brackets By Percentage of Population by State",
                     className='text-center text-primary mb-4'),
                 ),
-                dbc.Col(html.H1("Educational Attainment By Percentage of Population by State",
+                dbc.Col(html.H4("Educational Attainment By Percentage of Population by State",
                     className='text-center text-primary mb-4'),
                 ),
-                dbc.Col(html.H1("Food Insecurity By Percentage of Population by State by Year",
+                dbc.Col(html.H4("Food Insecurity By Percentage of Population by State by Year",
                     className='text-center text-primary mb-4'),
                 )
             ],
