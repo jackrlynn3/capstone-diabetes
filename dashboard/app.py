@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 import numpy as np
 import pandas as pd
 import matplotlib as mpl
-import gunicorn                     
+# import gunicorn                     
 from whitenoise import WhiteNoise  
 import plotly.express as px
 import urllib
