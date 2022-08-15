@@ -49,7 +49,7 @@ def createTrainingCard(header_md, card_images_links, card_image_titles, card_ima
     # Return card
     return training_card
 
-# Cards contents
+# GRAPHIC CARDS
 
 # Delay test
 header_delay = '''
@@ -105,6 +105,26 @@ analysis_train = '''
 '''
 train_card = createTrainingCard(header_train, images_train, titles_train, parts_train, analysis_train, overwrite=True)
 
+# Layer composition test
+header_layers = '''
+    Layer composition describes the number and types of neural network layers used in the DL model. Two layer
+    types are evaluated here--long short-term memory (LSTM) and gated recurrent unit (GRU)--for their strength
+    with time-series data. The number of neural network layers is also evaluated; the following models are tested:
+    1. 1 to 4 GRU layers
+    2. 1 to 4 LSTM layers
+    3. 2 to 4 GRU/LSTM mixed layers
+'''
+images_layers = ["https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/layer-1.png?raw=true"]
+titles_layers = ["#### **Evaluation of Layer Composition Models**", "#### **Comparison of Layer Composition Models to Truth**"]
+parts_layers = ['1']
+analysis_layers = '''
+    #### **Evaluation**
+    In all cases, 1 to 2 layers produced the most optimal layer formation, though any more dramatically increased loss.
+    There is a neglible difference between LSTM and GRU models, so the 2-layer mixed GRU/LSTM is chosen. Training time 
+    does increase with the number of layers, but there is not a large difference between 1 and 2 layers.
+'''
+layers_card = createTrainingCard(header_layers, images_layers, titles_layers, parts_layers, analysis_layers)
+
 # Optimal model
 header_optimal = '''
     The optimal model is trained to have the following parameters:
@@ -124,6 +144,10 @@ analysis_optimal = '''
     an absolute minimization of loss but rather a balance of training time, loss, and predictive power into the future.
 '''
 optimal_card = createTrainingCard(header_optimal, images_optimal, titles_optimal, parts_optimal, analysis_optimal)
+
+########################################################################################
+
+# PAGE LAYOUT
 
 layout = html.Div(
     [
@@ -167,7 +191,7 @@ layout = html.Div(
 
         dbc.Row(
             [
-                dcc.Dropdown(['Optimal Model', 'Window Size', 'Time Delay', 'Training Time'],
+                dcc.Dropdown(['Optimal Model', 'Window Size', 'Time Delay', 'Training Time', 'Layer Composition'],
                 'Optimal Model', id="select-opt")
             ],
             style={'fontSize':28, 'textAlign':'left', 'font-weight':'bold'}
@@ -191,3 +215,5 @@ def show_graph(opt_select):
         return train_card
     elif (opt_select == 'Optimal Model'):
         return optimal_card
+    elif (opt_select == 'Layer Composition'):
+        return layers_card
