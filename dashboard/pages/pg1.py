@@ -37,22 +37,39 @@ layout = html.Div(
     [
         dbc.Row(
             [
-                dcc.Markdown('''
-                    Textarea content initialized ghpajsiv ynsl;athnvu9reayhtfgr08iweweweweweweweweweweweweweweweweweweweweqa['dhfir[aqIHSRUIOEP;]]
-                    
-                    with multiple lines of text
-                    
-                    what is to be put here is to be decided
-                ''')
-            ],
-        ),  
+                dcc.Markdown('''##### The Growth of Diabetes in the USA''')
+            ]
+        ),
         dbc.Row(
             [
-                dbc.Col(html.H1("Diabetes by State from 2011 - 2020",
-                    className='text-center text-primary mb-4'),
+                dbc.Col(dcc.Markdown('''
+                    Diabetes has the seventh largest disease burden in the United States and continues to
+                    grow year by year. In 2020, 10.6% of the population were living with diabetes, which is
+                    a 12% increase from 2011. Based on the heat map below we can see that the states most
+                    affected by diabetes are West Virginia, Alabama, and Mississippi.
+                    ''')
                 ),
-                dbc.Col(html.H1("Diabetes Over Time from 2011 - 2020 by Location",
-                    className='text-center text-primary mb-4'),
+                dbc.Col(dcc.Markdown('''
+                    Like most non-communicable diseases, diabetes differentially affects people based on
+                    genetic, community, and lifestyle factors that potentiate the development of diabetes
+                    In the next page we will take a deeper look into these factors.
+                    ''')
+                )
+            ],
+        ),
+        dbc.Row(
+            [
+                dcc.Markdown(''' \n ''')
+            ]
+
+        ),
+        dbc.Row(
+            [
+                dbc.Col(html.H3("Diabetes by State from 2011 - 2020",
+                    className='text-left text-primary mb-4'),
+                ),
+                dbc.Col(html.H3("Diabetes Over Time from 2011 - 2020 by Location",
+                    className='text-left text-primary mb-4'),
                 )
             ],
         ),        
@@ -98,15 +115,13 @@ layout = html.Div(
         ),
         dbc.Row(
             [
+                dcc.Markdown('''##### Sources'''),
                 dcc.Markdown('''
-                    Sources
-                    
                     with multiple lines of text
-                    
                     what is to be put here is to be decided
                 ''')
-            ],
-        ),
+            ]
+        )
     ]
 )
 
@@ -131,7 +146,7 @@ def update_graph(option_slctd):
         scope="usa",
         color='percent',
         hover_data=['stateID', 'percent'],
-        color_continuous_scale=px.colors.sequential.YlOrRd,
+        color_continuous_scale=['#FFFFFF','#0B1EE3'],
         range_color=(0,16),
         labels={'stateID': 'percent'},
         template='plotly_dark'

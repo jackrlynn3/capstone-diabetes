@@ -1,10 +1,10 @@
 import dash
 from dash import dcc, html
 
-dash.register_page(__name__, name='Daibetes in the U.S.')
+dash.register_page(__name__, name='Predicting Diabetes')
 
 layout = html.Div(
     [
-        dcc.Markdown('# Under Concstruction')
+        dcc.Markdown('Can We Predict Diabetes?')
     ]
 )

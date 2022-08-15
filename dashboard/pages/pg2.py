@@ -136,7 +136,7 @@ def update_graph(option_slctd):
         scope="usa",
         color='percent',
         hover_data=['stateID', 'percent'],
-        color_continuous_scale=px.colors.sequential.YlOrRd,
+        color_continuous_scale=['#FFFFFF','#0B1EE3'],
         range_color=(0,16),
         labels={'stateID': 'percent'},
         template='plotly_dark'
@@ -163,7 +163,7 @@ def update_graph(option_slctd2):
         scope="usa",
         color='percent',
         hover_data=['stateID', 'percent'],
-        color_continuous_scale=px.colors.sequential.YlOrRd,
+        color_continuous_scale=['#FFFFFF','#0B1EE3'],
         range_color=(0,16),
         labels={'stateID': 'percent'},
         template='plotly_dark'
@@ -189,7 +189,7 @@ def update_graph(option_slctd3):
         scope="usa",
         color='percent',
         hover_data=['stateID', 'percent'],
-        color_continuous_scale=px.colors.sequential.YlOrRd,
+        color_continuous_scale=['#FFFFFF','#0B1EE3'],
         range_color=(0,16),
         labels={'stateID': 'percent'},
         template='plotly_dark'

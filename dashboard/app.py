@@ -36,8 +36,8 @@ sidebar = dbc.Nav(
 
 app.layout = dbc.Container([
     dbc.Row([
-        dbc.Col(html.Div("Diabetes Education: Who is at Risk?",
-                         style={'fontSize':50, 'textAlign':'center'}))
+        dbc.Col(html.Div("Diabetes in USA: Who is at risk?",
+                         style={'fontSize':50, 'textAlign':'center', 'color':'#000000'}))
     ]),
 
     html.Hr(),
