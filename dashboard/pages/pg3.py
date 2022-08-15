@@ -63,7 +63,7 @@ conditions = [
     (df6['mealsAtHome'] >= 21)
 ]
 
-values = ['Less than Once a Day', ' 1+ times a day ', '2+ times a dat', '3 times a day']
+values = ['Less than Once a Day', ' 1+ times a day ', '2+ times a day', '3 times a day']
 
 df6['eatingout'] = np.select(conditions, values)
 
