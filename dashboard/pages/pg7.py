@@ -65,6 +65,3 @@ layout = html.Div(children=[
         Lowest Glucose Reading is {minGlu} at {minTime}
     ''')
 ])
-
-if __name__ == '__main__':
-    app.run_server(debug=True)
