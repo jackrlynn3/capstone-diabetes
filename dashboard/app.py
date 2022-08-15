@@ -9,7 +9,11 @@ from whitenoise import WhiteNoise
 import plotly.express as px
 import urllib
 import sqlalchemy as sa
-
+from config import server
+from config import database
+from config import username
+from config import password
+from config import table
 
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
