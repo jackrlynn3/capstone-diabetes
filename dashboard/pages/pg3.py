@@ -77,6 +77,22 @@ income = df6[['diabetes','prediabetes','diabetesRisk','income']]
 
 dash.register_page(__name__, name='Indicators and Factors')
 
+fig1 = px.histogram(education, x="Education", y=['diabetes','prediabetes','diabetesRisk'],
+                    barmode='group',
+                    histfunc='avg',)
+
+fig2 = px.histogram(bmidist, x="bmicategory", y=['diabetes','prediabetes','diabetesRisk'],
+                    barmode='group',
+                    histfunc='avg',)
+
+fig3 = px.histogram(foodchoice, x="eatingout", y=['diabetes','prediabetes','diabetesRisk'],
+                    barmode='group',
+                    histfunc='avg',)
+
+fig4 = px.histogram(income, x="income", y=['diabetes','prediabetes','diabetesRisk'],
+                    barmode='group',
+                    histfunc='avg',)
+
 layout = html.Div(
     [
         dbc.Row(
@@ -98,7 +114,30 @@ layout = html.Div(
         dbc.Row(
             [
             dbc.Col(
-                
+                dcc.Graph(
+                    id='Education',
+                    figure = fig1), width=6
+                ),
+            dbc.Col(
+                dcc.Graph(
+                    id='BMI',
+                    figure = fig2
+                ), width=6
+                ),
+            ],
+        ),
+        dbc.Row(
+            [
+            dbc.Col(
+                dcc.Graph(
+                    id='Food',
+                    figure = fig3)
+                ),
+            dbc.Col(
+                dcc.Graph(
+                    id='Income',
+                    figure = fig4
+                ),
                 ),
             ],
         ),
