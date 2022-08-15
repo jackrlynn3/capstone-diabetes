@@ -1,10 +1,32 @@
 import dash
-from dash import dcc, html
-
-dash.register_page(__name__, name='NHANES findings')
+from dash import Dash, dcc, html, Input, Output
+from dash import dcc, html, callback, Output, Input
+import plotly.express as px
+import dash_bootstrap_components as dbc
+import pandas as pd
+from dash import html, dcc
+import pymssql
+conn = pymssql.connect("gen10-data-fundamentals-22-05-sql-server.database.windows.net","haydenmuscha","P3ngu!ns87","group5database")
+dash.register_page(__name__, name='Indicators and Factors')
 
 layout = html.Div(
     [
-        dcc.Markdown('# Under Concstruction')
+        dbc.Row(
+            [
+                dcc.Markdown('# Under Concstruction')
+            ],
+        ),
+        dbc.Row(
+            [
+                dcc.Markdown('''
+                    Indicators of Diabetes Type 2
+                    
+                    with multiple lines of text
+                    
+                    what is to be put here is to be decided
+                ''')
+            ],
+        ),
+        
     ]
 )
