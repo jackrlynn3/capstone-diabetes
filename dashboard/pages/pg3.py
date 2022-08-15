@@ -45,6 +45,36 @@ df6['diabetes'] = df6['diabetes'].astype("int")
 df6['prediabetes'] = df6['prediabetes'].astype("int")
 df6['diabetesRisk'] = df6['diabetesRisk'].astype("int")
 
+conditions = [
+    (df6['bmi'] < 18.5),
+    (df6['bmi'] >= 18.5) & (df6['bmi'] < 25),
+    (df6['bmi'] >= 25) & (df6['bmi'] < 30),
+    (df6['bmi'] >= 30)
+]
+
+values = ['underweight', 'normal', 'overweight', 'obese']
+
+df6['bmicategory'] = np.select(conditions, values)
+
+conditions = [
+    (df6['mealsAtHome'] < 7),
+    (df6['mealsAtHome'] >= 7) & (df6['mealsAtHome'] < 14),
+    (df6['mealsAtHome'] >= 14) & (df6['mealsAtHome'] < 21),
+    (df6['mealsAtHome'] >= 21)
+]
+
+values = ['Less than Once a Day', ' 1+ times a day ', '2+ times a dat', '3 times a day']
+
+df6['eatingout'] = np.select(conditions, values)
+
+education = df6[['diabetes','prediabetes','diabetesRisk','Education']]
+
+bmidist = df6[['diabetes','prediabetes','diabetesRisk','bmicategory']]
+
+foodchoice = df6[['diabetes','prediabetes','diabetesRisk','eatingout']]
+
+income = df6[['diabetes','prediabetes','diabetesRisk','income']]
+
 dash.register_page(__name__, name='Indicators and Factors')
 
 layout = html.Div(
