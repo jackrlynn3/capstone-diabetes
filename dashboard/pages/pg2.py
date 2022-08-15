@@ -60,10 +60,10 @@ layout = html.Div(
                 dbc.Col(html.H1("Income Brackets By Percentage of Population by State",
                     className='text-center text-primary mb-4'),
                 ),
-                dbc.Col(html.H1("Educational Attainment By Percentage of Populaiton by State",
+                dbc.Col(html.H1("Educational Attainment By Percentage of Population by State",
                     className='text-center text-primary mb-4'),
                 ),
-                dbc.Col(html.H1("Food Insecurity By Percentage of Populaiton by State by Year",
+                dbc.Col(html.H1("Food Insecurity By Percentage of Population by State by Year",
                     className='text-center text-primary mb-4'),
                 )
             ],
@@ -136,7 +136,7 @@ def update_graph(option_slctd):
         scope="usa",
         color='percent',
         hover_data=['stateID', 'percent'],
-        color_continuous_scale=['#FFFFFF','#0B1EE3'],
+        color_continuous_scale=['#FFFF8F','#C41E3A'],
         range_color=(0,16),
         labels={'stateID': 'percent'}
     )
@@ -162,7 +162,7 @@ def update_graph(option_slctd2):
         scope="usa",
         color='percent',
         hover_data=['stateID', 'percent'],
-        color_continuous_scale=['#FFFFFF','#0B1EE3'],
+        color_continuous_scale=['#FFFF8F','#C41E3A'],
         range_color=(0,16),
         labels={'stateID': 'percent'}
     )
@@ -187,7 +187,7 @@ def update_graph(option_slctd3):
         scope="usa",
         color='percent',
         hover_data=['stateID', 'percent'],
-        color_continuous_scale=['#FFFFFF','#0B1EE3'],
+        color_continuous_scale=['#FFFF8F','#C41E3A'],
         range_color=(0,16),
         labels={'stateID': 'percent'}
     )

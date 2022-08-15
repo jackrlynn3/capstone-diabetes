@@ -193,7 +193,7 @@ def update_graph(option_slctd):
         scope="usa",
         color='percent',
         hover_data=['stateID', 'percent'],
-        color_continuous_scale=['#FFFFFF','#0B1EE3'],
+        color_continuous_scale=['#FFFF8F','#C41E3A'],
         range_color=(0,16),
         labels={'stateID': 'percent'}
     )
