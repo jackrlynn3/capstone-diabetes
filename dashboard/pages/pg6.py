@@ -3,11 +3,11 @@ from dash import dcc, html
 import plotly.express as px
 import pandas as pd
 import pymssql
-from config import server
-from config import database
-from config import username
-from config import password
-from config import table
+# from config import server
+# from config import database
+# from config import username
+# from config import password
+# from config import table
 
 dash.register_page(__name__, name='Personal Glucose Readings')
 
