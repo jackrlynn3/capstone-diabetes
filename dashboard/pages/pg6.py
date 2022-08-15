@@ -11,11 +11,11 @@ from config import table
 
 dash.register_page(__name__, name='Personal Glucose Readings')
 
-conn = pymssql.connect(server,username,password,database)
+conn = pymssql.connect("gen10-data-fundamentals-22-05-sql-server.database.windows.net","haydenmuscha","P3ngu!ns87","group5database")
 
 cursor = conn.cursor()
 
-query = f'SELECT TOP(288) * FROM {table} WHERE PtID = 1 ORDER BY DeviceDtTM DESC;'
+query = f'SELECT TOP(288) * FROM CGM_Stream WHERE PtID = 1 ORDER BY DeviceDtTM DESC;'
 df = pd.read_sql(query, conn)
 
 maxNdx = df['Glucose'].idxmax()
