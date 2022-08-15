@@ -54,7 +54,8 @@ layout = html.Div(
                     genetic, community, and lifestyle factors that potentiate the development of diabetes
                     In the next page we will take a deeper look into these factors.
                     ''')
-                )
+                ),
+                html.Div(html.Br())
             ],
         ),
         dbc.Row(
@@ -115,11 +116,57 @@ layout = html.Div(
         ),
         dbc.Row(
             [
+                html.Div([html.Br(),html.Br()]),
                 dcc.Markdown('''##### Sources'''),
-                dcc.Markdown('''
-                    with multiple lines of text
-                    what is to be put here is to be decided
-                ''')
+                dbc.Col([html.Div('''
+                            Centers for Disease Control and Prevention. (2017, January 26). National Health and Nutrition Examination
+                            Survey. Retrieved August 5, 2022, from www.kaggle.com website: 
+                            https://www.kaggle.com/datasets/cdc/national-health-and-nutrition-examination-survey
+                            '''),
+                        html.Br(),
+                        html.Div('''
+                            Centers for Disease Control and Prevention. (2022, March 24). U.S. Chronic Disease Indicators: Diabetes | 
+                            Chronic Disease and Health Promotion Data & Indicators. Retrieved August 5, 2022, from Socrata 
+                            website: https://chronicdata.cdc.gov/Chronic-Disease-Indicators/U-S-Chronic-Disease-Indicators-Diabetes/f8ti-h92k/data
+                            '''),
+                        html.Br(),
+                        html.Div('''
+                            JAEB Center for Health Research. (2019). A Randomized Clinical Trial to Assess the Efficacy and Safety of 
+                            Continuous Glucose Monitoring in Youth < 8 with Type 1 Diabetes. Retrieved August 5, 2022, from 
+                            public.jaeb.org website: https://public.jaeb.org/dataset/563
+                        '''),
+                        html.Br(),
+                        html.Div('''
+                            United States Census Bureau. (2022a, March 17). American Community Survey: B06009: PLACE OF BIRTH BY 
+                            EDUCATIONAL ATTAINMENT IN THE UNITED STATES. Retrieved August 5, 2022, from data.census.gov 
+                            website: 
+                            https://data.census.gov/cedsci/table?q=education%20by%20state&tid=ACSDT5Y2020.B06009
+                        ''')
+                        ]),
+                dbc.Col([html.Div('''
+                            Centers for Disease Control and Prevention. (2021, June 3). National Center for Chronic Disease Prevention 
+                            and Health Promotion, Division of Nutrition, Physical Activity, and Obesity. Data, Trend and Maps 
+                            [online]. Retrieved August 5, 2022, from Cdc.gov website: https://www.cdc.gov/nccdphp/dnpao/data-trends-maps/index.html
+                            '''),
+                        html.Br(),
+                        html.Div('''
+                            Chen, Y., Zhang, X.-P., Yuan, J., Cai, B., Wang, X.-L., Wu, X.-L., … Li, X.-Y. (2018, August 21). Data from: 
+                            Association of body mass index and age with incident diabetes in Chinese adults: a population-based 
+                            cohort study. Retrieved August 5, 2022, from datadryad.org website: 
+                            https://doi.org/10.5061/dryad.ft8750v
+                        '''),
+                        html.Br(),
+                        html.Div('''
+                            U.S. Department of Agriculture. (2021, September 8). Food Security in the U.S. USDA (2019). Retrieved from 
+                            www.ers.usda.gov website: https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s/interactive-charts-and-highlights/
+                        '''),
+                        html.Br(),
+                        html.Div('''
+                            United States Census Bureau. (2022b, March 17). American Community Survey: S1901: INCOME IN THE PAST 
+                            12 MONTHS (IN 2020 INFLATION-ADJUSTED DOLLARS) U.S. Census Bureau (2020). Retrieved from 
+                            data.census.gov website: https://data.census.gov/cedsci/table?q=S1901&tid=ACSST5Y2020.S1901
+                        ''')
+                        ])
             ]
         )
     ]
