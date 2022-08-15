@@ -45,7 +45,7 @@ lineChart = df[['DeviceDtTM','Glucose']]
 
 fig = px.line(lineChart, x='DeviceDtTM', y='Glucose', title='24-Hour Glucose Readings')
 
-app.layout = html.Div(children=[
+layout = html.Div(children=[
     html.H1(children='Glucose Tracker'),
 
     html.Div(children='''
