@@ -30,8 +30,7 @@ layout = html.Div(
         dbc.Row(
             [
             dbc.Col(
-                dcc.Dropdown(id="slct_state1", options =[{'label':x, 'value':x} for x in incomestates.sort_values('income bracket')['income bracket'].unique()],
-                        value='Less than 10,000')
+                
                 ),
             ],
         ),
