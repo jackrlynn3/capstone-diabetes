@@ -13,7 +13,7 @@ layout = html.Div(
     [
         dbc.Row(
             [
-                dcc.Markdown('# Under Concstruction')
+                dcc.Markdown('# Indicators and factors of Diabetes Type 2')
             ],
         ),
         dbc.Row(
