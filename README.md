@@ -116,6 +116,17 @@ The SQL database is hosted on Azure SQL Databases and is restricted access to th
 <a name="machine-learning"/></a>
 ## Machine Learning
 
+Machin learning (ML) is used to assess the ability to predict a diabetes diagnosis on readily available medical vitals and demographic information such as blood pressure, body mass index, age, and sex. Machine learning models utilize the `scikit-learn` library.
+
+[`Scikit-Learn'](https://scikit-learn.org/stable/) is built upon SciPy, NumPy, and matplotlib making it ideal for machine learning algorithms like classification, regression, and clustering. The library also provides tools for evaluating models, tuning hyperparameters, and pre-processing data. Since Scikit-Learn is open source and commercially useable machine learning tasks are assessable to the public.
+
+`.ipynb` in [Visual Studio Code](https://code.visualstudio.com/) is used for ETL, EDA, and model training. 
+The dataset used, along with the ML’s task presented require that the method used by the model is adequate for supervised learning on classification-based tasks. Following EDA, data over- and under-sampling is utilized but ultimately abandoned in favor of a cost-sensitive algorithm. Logistic regression and Support Vector Machines (SVM) are used. The dataset has an imbalance in diagnosis classification where a positive diabetes diagnosis only accounts for 2% of the dataset.
+
+Logistic regression, like many other machine learning models, is designed and demonstrated on problems that assume equal distribution of classes. For this reason, logistic regression is used as a comparison against SVC, which can be updated to take the importance of the minority class into consideration when training.
+
+Models are evaluated on their ROC AUC and precision-recall metrics. Following a GridSearch for tuning the algorithm, LinearSVC and SVC produced similar results and ultimately LinearSVC is chosen because of its faster processing time and ability to reduce the number of false negatives.
+
 <a name="deep-learning"/></a>
 ## Deep Learning
 
