@@ -51,7 +51,7 @@ layout = html.Div(
                 ),
                 dbc.Col(dcc.Markdown('''
                     Like most non-communicable diseases, diabetes differentially affects people based on
-                    genetic, community, and lifestyle factors that potentiate the development of diabetes
+                    genetic, community, and lifestyle factors that potentiate the development of diabetes.
                     In the next page we will take a deeper look into these factors.
                     ''')
                 ),
@@ -195,8 +195,7 @@ def update_graph(option_slctd):
         hover_data=['stateID', 'percent'],
         color_continuous_scale=['#FFFFFF','#0B1EE3'],
         range_color=(0,16),
-        labels={'stateID': 'percent'},
-        template='plotly_dark'
+        labels={'stateID': 'percent'}
     )
     return fig
 @callback(

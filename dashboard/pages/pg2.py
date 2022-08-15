@@ -138,8 +138,7 @@ def update_graph(option_slctd):
         hover_data=['stateID', 'percent'],
         color_continuous_scale=['#FFFFFF','#0B1EE3'],
         range_color=(0,16),
-        labels={'stateID': 'percent'},
-        template='plotly_dark'
+        labels={'stateID': 'percent'}
     )
     return fig
 
@@ -165,8 +164,7 @@ def update_graph(option_slctd2):
         hover_data=['stateID', 'percent'],
         color_continuous_scale=['#FFFFFF','#0B1EE3'],
         range_color=(0,16),
-        labels={'stateID': 'percent'},
-        template='plotly_dark'
+        labels={'stateID': 'percent'}
     )
     return fig2
 @callback(
@@ -191,7 +189,6 @@ def update_graph(option_slctd3):
         hover_data=['stateID', 'percent'],
         color_continuous_scale=['#FFFFFF','#0B1EE3'],
         range_color=(0,16),
-        labels={'stateID': 'percent'},
-        template='plotly_dark'
+        labels={'stateID': 'percent'}
     )
     return fig3
