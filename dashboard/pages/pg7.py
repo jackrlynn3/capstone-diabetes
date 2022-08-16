@@ -114,9 +114,10 @@ header_layers = '''
     2. 1 to 4 LSTM layers
     3. 2 to 4 GRU/LSTM mixed layers
 '''
-images_layers = ["https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/layer-1.png?raw=true"]
+images_layers = ["https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/layer-1.png?raw=true", 
+    "https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/layer-2.png?raw=true"]
 titles_layers = ["#### **Evaluation of Layer Composition Models**", "#### **Comparison of Layer Composition Models to Truth**"]
-parts_layers = ['1']
+parts_layers = ['1', '2']
 analysis_layers = '''
     #### **Evaluation**
     In all cases, 1 to 2 layers produced the most optimal layer formation, though any more dramatically increased loss.
