@@ -53,9 +53,9 @@ def createTrainingCard(header_md, card_images_links, card_image_titles, card_ima
 
 # Delay test
 header_delay = '''
-    Time delay describes the gap between when sample blood glucose levels are taken and when the prediction
-    being made (e.g., predicting 30 minutes into the future). Time delays are varied by 5 min intervals, ranging
-    from 5 to 120 min.
+    Time delay describes the gap between when sample blood glucose levels are taken and when the prediction is
+    being made (e.g., predicting 30 minutes after the latest reading). Time delays are varied by 5 min intervals,
+    ranging from 5 to 120 min.
 '''
 images_delay = ["https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/time-delay-2.png?raw=true",
     "https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/visualizations/deep-learning/time-delay-1.png?raw=true"]
@@ -65,17 +65,18 @@ analysis_delay = '''
     #### **Evaluation**
     Loss linearly increases as the distance between prediction value and input values increases;
     the best balance between loss and substantial blood forecasting is 30 min. Time delays do not
-    have any non-neglible effects on training time. All models perform best during times of change
-    and worst at predicting the specific peaks and valleys of the traces, typically
-    underpredicting them. Overall, the 30 min delay model has the best fidelty to truth traces.
+    have any non-neglible effects on training time. All models perform best during increases and
+    decreases and worst during peaks, valleys, and heavy noise areas of the traces, typically
+    underpredicting them. Overall, the 30 min delay model has sufficient fidelty to truth traces
+    while still subtantially predicting into the future.
 '''
 delay_card = createTrainingCard(header_delay, images_delay, titles_delay, parts_delay, analysis_delay)
 
 # Width test
 header_window = '''
-    Window sizes describes how many previous inputs are considered for the current estimation (e.g., using
-    the 10 previous inputs for the current estimation). Window sizes are varied by 5 previous points, ranging
-    from 5 to 50 previous timepoints.
+    Window size describes how many previous inputs are considered for the current estimation (e.g., using
+    the 10 previous inputs for the current estimation). Window sizes are varied by 5 previous point intervals,
+    ranging from 5 to 50 previous windows.
 '''
 images_window = ["https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/width-1.png?raw=true",
     "https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/width-2.png?raw=true"]
@@ -91,8 +92,8 @@ window_card = createTrainingCard(header_window, images_window, titles_window, pa
 
 # Training test
 header_train = '''
-    Training time describes how many training epochs are required for the model to be sufficiently trained.
-    Training times are varied between 1 and 50 to determine how much training is required to minimize loss.
+    Training time describes how many training epochs are required for the model to sufficiently minimize loss
+    without over fitting. Training times are varied between 1 and 50 to determine how much training is required.
 '''
 images_train = ["https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/training-time-1.png?raw=true"]
 titles_train = ["#### **Evaluation of Training Time Models**"]
@@ -120,7 +121,7 @@ titles_layers = ["#### **Evaluation of Layer Composition Models**", "#### **Comp
 parts_layers = ['1', '2']
 analysis_layers = '''
     #### **Evaluation**
-    In all cases, 1 to 2 layers produced the most optimal layer formation, though any more dramatically increased loss.
+    In all cases, 1 to 2 layers produces the most optimal layer formation, though any more dramatically increases loss.
     There is a neglible difference between LSTM and GRU models, so the 2-layer mixed GRU/LSTM is chosen. Training time 
     does increase with the number of layers, but there is not a large difference between 1 and 2 layers.
 '''
@@ -141,7 +142,7 @@ titles_optimal = ["#### **Evaluation of Optimal Model over 30 Training Epochs**"
 parts_optimal = ['1', '2']
 analysis_optimal = '''
     #### **Evaluation**
-    This model took 299 sec to train and has a result mean squared error loss of 1337. Note that this model is not
+    This model takes 299 sec to train and has a resultant mean squared error loss of 1337. Note that this model is not
     an absolute minimization of loss but rather a balance of training time, loss, and predictive power into the future.
 '''
 optimal_card = createTrainingCard(header_optimal, images_optimal, titles_optimal, parts_optimal, analysis_optimal)
@@ -159,18 +160,24 @@ layout = html.Div(
                     [
                         dcc.Markdown('''
                             # **Blood Glucose Levels Prediction using Deep Learning**
-                            Tracking blood glucose levels is essential to modern diabetes care. Deep learning time series models are used to predict blood glucose levels of Type-1 diabetes patients 30 minutes ahead. Additionally, patients are notified when their blood glucose levels exceed 300 mmol/L, which is considered dangerously high.
+                            Tracking blood glucose levels is essential to modern diabetes care. Deep learning time
+                            series models are used to predict blood glucose levels of Type-1 diabetes patients 30
+                            min in the future. Additionally, patients are warned when their blood glucose levels
+                            exceed 180 mmol/L and 300 mmol/L, which are both markers for hazardous and dangerous
+                            blood glucose levels, respectively.
                         ''')
                     ],
                 ),
                 
                 # Model introduction
                 dbc.Col(
-                    [
-                        dcc.Markdown('''
-                            ## **Optimized Model**
-                            <Include description of model>
-                        ''')
+                    [dcc.Markdown('''
+                        ## **Optimized Model**
+                        The optimal model is trained to have the following the optimal parameters from
+                        testing:
+                    '''),
+                    dbc.Col([dbc.Card([dbc.CardImg(src='https://github.com/jackrlynn3/capstone-diabetes/blob/main/models/deep-learning/graphics/optimal_model.drawio.png?raw=true', top=True)],
+                        style={"width": '100%', "flex-grow": str('1')})]),
                     ],
                 )
             ]
