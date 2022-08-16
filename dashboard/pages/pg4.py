@@ -38,8 +38,15 @@ layout = html.Div(
             [
                 dbc.Col(
                     [
-                    (html.Img(src=('https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/visualizations/machine-learning/SF_anova_scores.png'),style={'height':'75%'}))
-                    ], width = 6
+                    (html.Img(
+                        src=('https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/visualizations/machine-learning/SF_anova_scores.png'),
+                        style={
+                            'width':'10%',
+                            'height':'10%'
+                            }
+                            )
+                    )
+                    ],
                 ),
                 dbc.Col(
                     [
