@@ -59,10 +59,10 @@ header_delay = '''
 '''
 images_delay = ["https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/time-delay-2.png?raw=true",
     "https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/visualizations/deep-learning/time-delay-1.png?raw=true"]
-titles_delay = ["#### **Evaluation of Time Delay Models**", "#### **Comparison of Time Delay Models to Truth**"]
+titles_delay = ["#### Evaluation of Time Delay Models", "#### Comparison of Time Delay Models to Truth"]
 parts_delay = ['1', '2']
 analysis_delay = '''
-    #### **Evaluation**
+    #### Evaluation
     Loss linearly increases as the distance between prediction value and input values increases;
     the best balance between loss and substantial blood forecasting is 30 min. Time delays do not
     have any non-neglible effects on training time. All models perform best during increases and
@@ -80,10 +80,10 @@ header_window = '''
 '''
 images_window = ["https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/width-1.png?raw=true",
     "https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/width-2.png?raw=true"]
-titles_window = ["#### **Evaluation of Window Size Models**", "#### **Comparison of Window Size Models to Truth**"]
+titles_window = ["#### Evaluation of Window Size Models", "#### Comparison of Window Size Models to Truth"]
 parts_window = ['1', '2']
 analysis_window = '''
-    #### **Evaluation**
+    #### Evaluation
     Model accuracy remains consistently high for all window sizes above 10, with minor training time costs for
     increasing window size. A window size of 20 previous points is used to maximize accuracy without too much
     computational cost.
@@ -96,10 +96,10 @@ header_train = '''
     without over fitting. Training times are varied between 1 and 50 to determine how much training is required.
 '''
 images_train = ["https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/training-time-1.png?raw=true"]
-titles_train = ["#### **Evaluation of Training Time Models**"]
+titles_train = ["#### Evaluation of Training Time Models"]
 parts_train = ['1']
 analysis_train = '''
-    #### **Evaluation**
+    #### Evaluation
     Loss rounds off at around 6 epochs, though some improvements occur up until 30. Training time linearly increases
     with the number of epochs. The ideal number of training epochs chosen is 30 to balance both training time and
     loss reduction.
@@ -117,10 +117,10 @@ header_layers = '''
 '''
 images_layers = ["https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/layer-1.png?raw=true", 
     "https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/layer-2.png?raw=true"]
-titles_layers = ["#### **Evaluation of Layer Composition Models**", "#### **Comparison of Layer Composition Models to Truth**"]
+titles_layers = ["#### Evaluation of Layer Composition Models", "#### Comparison of Layer Composition Models to Truth"]
 parts_layers = ['1', '2']
 analysis_layers = '''
-    #### **Evaluation**
+    #### Evaluation
     In all cases, 1 to 2 layers produces the most optimal layer formation, though any more dramatically increases loss.
     There is a neglible difference between LSTM and GRU models, so the 2-layer mixed GRU/LSTM is chosen. Training time 
     does increase with the number of layers, but there is not a large difference between 1 and 2 layers.
@@ -137,11 +137,11 @@ header_optimal = '''
 '''
 images_optimal = ["https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/optimum-model-1.png?raw=true",
     "https://github.com/jackrlynn3/capstone-diabetes/blob/main/visualizations/deep-learning/optimum-model-2.png?raw=true"]
-titles_optimal = ["#### **Evaluation of Optimal Model over 30 Training Epochs**",
-    "#### **Comparison of Optimal Model to Truth**"]
+titles_optimal = ["#### Evaluation of Optimal Model over 30 Training Epochs",
+    "#### Comparison of Optimal Model to Truth"]
 parts_optimal = ['1', '2']
 analysis_optimal = '''
-    #### **Evaluation**
+    #### Evaluation
     This model takes 299 sec to train and has a resultant mean squared error loss of 1337. Note that this model is not
     an absolute minimization of loss but rather a balance of training time, loss, and predictive power into the future.
 '''
@@ -159,7 +159,7 @@ layout = html.Div(
                 dbc.Col(
                     [
                         dcc.Markdown('''
-                            # **Blood Glucose Levels Prediction using Deep Learning**
+                            ## Blood Glucose Levels Prediction using Deep Learning
                             Tracking blood glucose levels is essential to modern diabetes care. Deep learning time
                             series models are used to predict blood glucose levels of Type-1 diabetes patients 30
                             min in the future. Additionally, patients are warned when their blood glucose levels
@@ -172,7 +172,7 @@ layout = html.Div(
                 # Model introduction
                 dbc.Col(
                     [dcc.Markdown('''
-                        ## **Optimized Model**
+                        ## Optimized Model
                         The optimal model is trained to have the following the optimal parameters from
                         testing:
                     '''),
@@ -186,7 +186,7 @@ layout = html.Div(
         dbc.Row(
             [
                 dcc.Markdown('''
-                    ## **Model Optimization**
+                    ## Model Optimization
                     The deep learning model is optimized for four terms: (1) **Window Size:** number of previously
                     used datapoints; (2) **Time Delay:** how far ahead the model predicts in the future; (3)
                     **Training Time:** number of training epochs needed to fully train model; and (4) **Layer Composition:**
