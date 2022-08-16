@@ -21,7 +21,7 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 4. **[Machine Learning](#machine-learning)**
 5. **[Deep Learning](#deep-learning)**
 6. **[Visualizations](#visualizations)**
-7. **[Website Deployment](#website-deployment)**
+7. **[Dash Deployment](#dash-deployment)**
 8. **[References](#references)**
 
 <a name="datasets"></a>
@@ -143,8 +143,16 @@ Several different models parameter sets then are tested, optimizing for [layer c
 <a name="visualizations"/></a>
 ## Visualizations
 
+The graphs and visualiziations for the Dash environment were made using a mixture of python methods. 
+
+For the visualization of the Machine Learning model we utilized [seaborne](https://seaborn.pydata.org/), which is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics. Seaborne was chosen as it integrates closely with [pandas](https://pandas.pydata.org/) data structures. For these images they were created inside Python and exported as .png files where the raw image is directly referenced by url. These iamges can be found [here](https://github.com/jackrlynn3/capstone-diabetes/tree/main/visualizations/deep-learning).
+
+The images of the Machine Learning model were created inside of the [Google Colab](https://colab.research.google.com/?utm_source=scs-index) and exported as .png files to gtihub where there raw image urls are directly referenced in the code. These iamges can be found [here](https://github.com/jackrlynn3/capstone-diabetes/tree/main/visualizations/machine-learning).
+
+For the maps, bar graphs, and line graphs [plotly express](https://plotly.com/python/plotly-express/) was utilized for its native integrash with [Dash](https://plotly.com/dash/) a product created by plotly. A rough overview of plotly graphs and their implementation can be found[here](https://plotly.com/python/plotly-express/#gallery).
+
 <a name="website-deployment"/></a>
-## Website Deployment
+## Dash Deployment
 
 <a name="references"/></a>
 ## References
