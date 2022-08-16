@@ -118,7 +118,7 @@ def update_graph(n):
             ticktext = [df['Time'][35],df['Time'][71],df['Time'][107],df['Time'][143],
             df['Time'][179],df['Time'][215],df['Time'][251]]
         ),
-        yaxis = dict(range=[min(df['Glucose'])-5,max(df['Glucose']+5)])
+        yaxis = dict(range=[min(df['Glucose'])-10,max(df['Glucose']+10)])
     )
 
     return fig
