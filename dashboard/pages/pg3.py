@@ -57,13 +57,14 @@ values = ['underweight', 'normal', 'overweight', 'obese']
 df6['bmicategory'] = np.select(conditions, values)
 
 conditions = [
-    (df6['mealsAtHome'] < 7),
-    (df6['mealsAtHome'] >= 7) & (df6['mealsAtHome'] < 14),
-    (df6['mealsAtHome'] >= 14) & (df6['mealsAtHome'] < 21),
-    (df6['mealsAtHome'] >= 21)
+    (df6['mealsAtHome'] < 1),
+    (df6['mealsAtHome'] >= 1) & (df6['mealsAtHome'] < 2),
+    (df6['mealsAtHome'] >= 2) & (df6['mealsAtHome'] < 5),
+    (df6['mealsAtHome'] >= 5) & (df6['mealsAtHome'] < 8),
+    (df6['mealsAtHome'] >= 8)
 ]
 
-values = ['Less than Once a Day', ' 1+ times a day ', '2+ times a day', '3 times a day']
+values = ['Never', 'oncew a week', 'every other day', 'Daily','More than once a day']
 
 df6['eatingout'] = np.select(conditions, values)
 
