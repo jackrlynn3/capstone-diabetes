@@ -116,47 +116,49 @@ The SQL database is hosted on Azure SQL Databases and has restricted access to t
 <a name="machine-learning"/></a>
 ## Machine Learning
 
-Machin learning (ML) is used to assess the ability to predict a diabetes diagnosis on readily available medical vitals and demographic information such as blood pressure, body mass index, age, and sex. Machine learning models utilize the `scikit-learn` library.
+Machine learning (ML) is used to assess the ability to predict a diabetes diagnosis on readily available medical vitals and demographic information such as blood pressure, body mass index, age, and sex. Machine learning models utilize the `scikit-learn` library.
 
-[`Scikit-Learn`](https://scikit-learn.org/stable/) is built upon SciPy, NumPy, and matplotlib making it ideal for machine learning algorithms like classification, regression, and clustering. The library also provides tools for evaluating models, tuning hyperparameters, and pre-processing data. Since Scikit-Learn is open source and commercially useable machine learning tasks are assessable to the public.
+[`scikit-learn`](https://scikit-learn.org/stable/) is built upon SciPy, NumPy, and matplotlib making it ideal for machine learning algorithms like classification, regression, and clustering. The library also provides tools for evaluating models, tuning hyperparameters, and pre-processing data. Since `scikit-learn` is open source and commercially useable ML tasks are accessible to the public.
 
 `.ipynb` in [Visual Studio Code](https://code.visualstudio.com/) is used for ETL, EDA, and model training. 
 The dataset used, along with the ML’s task presented require that the method used by the model is adequate for supervised learning on classification-based tasks. Following EDA, data over- and under-sampling is utilized but ultimately abandoned in favor of a cost-sensitive algorithm. Logistic regression and Support Vector Machines (SVM) are used. The dataset has an imbalance in diagnosis classification where a positive diabetes diagnosis only accounts for 2% of the dataset.
 
 Logistic regression, like many other machine learning models, is designed and demonstrated on problems that assume equal distribution of classes. For this reason, logistic regression is used as a comparison against SVC, which can be updated to take the importance of the minority class into consideration when training.
 
-Models are evaluated on their ROC AUC and precision-recall metrics. Following a GridSearch for tuning the algorithm, LinearSVC and SVC produced similar results and ultimately LinearSVC is chosen because of its faster processing time and ability to reduce the number of false negatives.
+Models are evaluated on their ROC AUC and precision-recall metrics. Following a `GridSearch` for tuning the algorithm, LinearSVC and SVC produced similar results and ultimately LinearSVC is chosen because of its faster processing time and ability to reduce the number of false negatives.
 
 <a name="deep-learning"/></a>
 ## Deep Learning
 
-Deep learning (DL) is used to predict when Type I diabetes patients have a hazardous blood glucose spikes (defined here as 300 mmol/L) at before they happen. The tools used to form the DL models are `TensorFlow`, and Google Colab.
+Deep learning (DL) is used to predict when Type I diabetes patients have hazrdous and dangerous blood glucose spikes (defined here as 180 mmol/L and 300 mmol/L, respectively) at before they happen. The tools used to form the DL models are `TensorFlow` and Google Colab.
 
-[`TensorFlow`](https://www.tensorflow.org/) is the choosen libray for DL because it contains a wide breadth of tools for training all types of DL models quickly and simply; additionally, all major DL layer types are covered by the library. `.ipynb` in [Google Colab](https://colab.research.google.com/?utm_source=scs-index) is the primary training space for DL models primarily for its GPU-accelerated training capabilities. Using `TensorFlow`, training DL networks with GPU capacities can reduce training time by around 85%, with much less memory and RAM demands. [[10]](https://datamadness.github.io/TensorFlow2-CPU-vs-GPU)
+[`TensorFlow`](https://www.tensorflow.org/) is the choosen libray for DL because it contains a wide breadth of tools for training all types of DL models quickly and simply; additionally, all major DL layer types are covered by the library. `.ipynb` in [Google Colab](https://colab.research.google.com/?utm_source=scs-index) is the primary training space for DL models primarily for its GPU-accelerated training capabilities and its built in environment for `TensorFlow`. Training DL networks with GPU capacities can reduce training time by around 85%, with much less memory and RAM demands. [[10]](https://datamadness.github.io/TensorFlow2-CPU-vs-GPU)
 
 Given that this is a time series problem, recurrent neural network (RNN) layers are used. The two layers tested are long short-term memory (LSTM) and gated recurrent unit (GRU); RNN layers are not tested do their backpropagation and long-term memory issues. All models are created using `TensorFlow`'s `Sequential` model function, in which layers are created in sequence. [Two model frameworks](https://github.com/jackrlynn3/capstone-diabetes/blob/main/models/deep_learning/diabetes_DL_exploration.ipynb) were initially consistered: (1) predicting problematic peaks and their preceding upslopes; and (2) predicting blood glucose values a certain number of timesteps before. Ultimately, the latter model structure is chosen due its lower loss values and consistency.
 
-<INCLUDE DIAGRAM FOR BEST MODEL>
+![optimal_model drawio](https://user-images.githubusercontent.com/105175430/184986320-67554d5e-6e9e-48fc-a964-a503d54e258b.png)
 
-Several different models parameter sets then are tested, optimizing for [layer composition](), [layer depth](), [training size](https://github.com/jackrlynn3/capstone-diabetes/blob/main/models/deep_learning/optimization/diabetes_DL_training_test.ipynb), [window size](), and [time delay](). The [best model](https://github.com/jackrlynn3/capstone-diabetes/blob/main/models/deep_learning/diabetes_DL_final_model.ipynb) is then trained and its parameters and structure are saved [here](https://github.com/jackrlynn3/capstone-diabetes/tree/main/models/deep_learning/saved-models/optimum_model). This parameter set can then be read later into our website for real time blood glucose spike predictions.
+*Structure of the optimal used for blood glucose level prediction, including diagrams for LSTM and GRU layers.*
+
+Several different model parameter sets are tested, optimizing for [layer composition & layer depth](https://github.com/jackrlynn3/capstone-diabetes/blob/main/models/deep-learning/optimization/diabetes_DL_model_test.ipynb), [training size](https://github.com/jackrlynn3/capstone-diabetes/blob/main/models/deep_learning/optimization/diabetes_DL_training_test.ipynb), [window size](https://github.com/jackrlynn3/capstone-diabetes/blob/main/models/deep-learning/optimization/diabetes_DL_width_test.ipynb), and [time delay](https://github.com/jackrlynn3/capstone-diabetes/blob/main/models/deep-learning/optimization/diabetes_DL_delay_time_test.ipynb). The [best model](https://github.com/jackrlynn3/capstone-diabetes/blob/main/models/deep_learning/diabetes_DL_final_model.ipynb) is then trained and its parameters and structure are saved [here](https://github.com/jackrlynn3/capstone-diabetes/tree/main/models/deep_learning/saved-models/optimum_model); all other models are saved under [`/models/deep-learning/saved-models/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/models/deep-learning/saved-models). This parameter set can then be read later into our website for real time blood glucose spike predictions. A sample of what that would look like can be found [here](https://github.com/jackrlynn3/capstone-diabetes/blob/main/models/deep-learning/demo_dl.ipynb).
 
 <a name="visualizations"/></a>
 ## Visualizations
 
-The graphs and visualiziations for the Dash environment were made using a mixture of python methods. 
+The graphs and visualizations for the `Dash` environment are made using a mixture of Python methods. 
 
-For the visualization of the Machine Learning model we utilized [seaborne](https://seaborn.pydata.org/), which is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics. Seaborne was chosen as it integrates closely with [pandas](https://pandas.pydata.org/) data structures. For these images they were created inside Python and exported as .png files where the raw image is directly referenced by url. These iamges can be found [here](https://github.com/jackrlynn3/capstone-diabetes/tree/main/visualizations/deep-learning).
+For the visualization of the Machine Learning model, [seaborne](https://seaborn.pydata.org/)--a Python data visualization library based on `matplotlib`--is utilized. It provides a high-level interface for drawing attractive and informative statistical graphics. `seaborne` is chosen as it integrates closely with [pandas](https://pandas.pydata.org/) data structures. For these images they are created inside Python and exported as `.png` files where the raw image is directly referenced by url. These images can be found [here](https://github.com/jackrlynn3/capstone-diabetes/tree/main/visualizations/deep-learning).
 
-The images of the Machine Learning model were created inside of the [Google Colab](https://colab.research.google.com/?utm_source=scs-index) and exported as .png files to gtihub where there raw image urls are directly referenced in the code. These iamges can be found [here](https://github.com/jackrlynn3/capstone-diabetes/tree/main/visualizations/machine-learning).
+The images of the Deep Learning model were created inside of [Google Colab](https://colab.research.google.com/?utm_source=scs-index) using `matplotlib` directly and exported as `.png` files to Github where there raw image urls are directly referenced in the code. These images can be found [here](https://github.com/jackrlynn3/capstone-diabetes/tree/main/visualizations/machine-learning).
 
-For the maps, bar graphs, and line graphs [plotly express](https://plotly.com/python/plotly-express/) was utilized for its native integrash with [Dash](https://plotly.com/dash/) a product created by plotly. A rough overview of plotly graphs and their implementation can be found[here](https://plotly.com/python/plotly-express/#gallery).
+For the maps, bar graphs, and line graphs, [plotly express](https://plotly.com/python/plotly-express/) is utilized for its native integration with [`Dash`],(https://plotly.com/dash/) a product created by Plotly. A rough overview of `plotly` graphs and their implementation can be found [here](https://plotly.com/python/plotly-express/#gallery).
 
 <a name="website-deployment"/></a>
 ## Dash Deployment
 
-The Dash Deployment utilizes a combination of Python code and bootstrapping components. Documentation for all the Dash Bootsrap Components are documented [here](https://dash-bootstrap-components.opensource.faculty.ai/docs/components/).
+`Dash` deploymen utilizes a combination of Python code and bootstrapping components, as documented [here](https://dash-bootstrap-components.opensource.faculty.ai/docs/components/).
 
-For the Deployment of Dash the most helpful resource has been [Adam Schroeder](https://www.linkedin.com/in/adam-schroeder-17b5a819/) A Community Manager at Plotly. His YouTube channel [Charming Data](https://www.youtube.com/c/CharmingData) provides a large sum of tutorials on all things Dash. For a specific tutroal on Dash Bootsrap see [this video](https://www.youtube.com/watch?v=0mfIK8zxUds) .
+For the Deployment of `Dash` the most helpful resource has been [Adam Schroeder](https://www.linkedin.com/in/adam-schroeder-17b5a819/), a Community Manager at Plotly. His YouTube channel [Charming Data](https://www.youtube.com/c/CharmingData) provides a large sum of tutorials on all things `Dash`. For a specific tutorial on Dash Bootstrap see [this video](https://www.youtube.com/watch?v=0mfIK8zxUds).
 
 <a name="references"/></a>
 ## References
