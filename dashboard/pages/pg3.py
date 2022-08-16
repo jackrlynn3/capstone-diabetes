@@ -69,6 +69,7 @@ values = ['Never', 'oncew a week', 'every other day', 'Daily','More than once a 
 df6['eatingout'] = np.select(conditions, values)
 
 education = df6[['diabetes','prediabetes','diabetesRisk','Education']]
+education['Education'] = education['Education'].replace(['Some College or Associates degree','No High School Diploma or GED','High School Diploma or GED/equivalent'],['Some College','No HS Diploma/GED','HS DIploma/GED'])
 
 bmidist = df6[['diabetes','prediabetes','diabetesRisk','bmicategory']]
 
