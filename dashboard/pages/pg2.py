@@ -155,8 +155,10 @@ def update_graph(option_slctd):
         color='percent',
         hover_data=['stateID', 'percent'],
         color_continuous_scale=['#FFFF8F','#C41E3A'],
-        range_color=(0,20),
-        labels={'stateID': 'percent'}
+        range_color=(0,25),
+        labels={"stateID": "State",
+                'percent': "Percent"
+        }
     )
     return fig
 
@@ -181,8 +183,10 @@ def update_graph(option_slctd2):
         color='percent',
         hover_data=['stateID', 'percent'],
         color_continuous_scale=['#FFFF8F','#C41E3A'],
-        range_color=(0,35),
-        labels={'stateID': 'percent'}
+        range_color=(0,40),
+        labels={"stateID": "State",
+                'percent': "Percent"
+        }
     )
     return fig2
 @callback(
@@ -206,7 +210,9 @@ def update_graph(option_slctd3):
         color='percent',
         hover_data=['stateID', 'percent'],
         color_continuous_scale=['#FFFF8F','#C41E3A'],
-        range_color=(0,16),
-        labels={'stateID': 'percent'}
+        range_color=(0,20),
+        labels={"stateID": "State",
+                'percent': "Percent"
+        }
     )
     return fig3

@@ -195,7 +195,9 @@ def update_graph(option_slctd):
         hover_data=['stateID', 'percent'],
         color_continuous_scale=['#FFFF8F','#C41E3A'],
         range_color=(0,16),
-        labels={'stateID': 'percent'}
+        labels={"stateID": "State",
+                'percent': "Percent of Population"
+        }
     )
     return fig
 @callback(
@@ -205,5 +207,10 @@ def update_graph(option_slctd):
 def build_graph(state_slctd):
     df = linemap[(linemap['stateID']==state_slctd)]
     df = df.sort_values(by='year')
-    figln = px.line(df, x='year', y='percent')
+    figln = px.line(df, x='year', y='percent',
+            labels={
+                "year": "Year",
+                "percent": "Percent of Population"
+
+            })
     return figln
