@@ -154,6 +154,10 @@ For the maps, bar graphs, and line graphs [plotly express](https://plotly.com/py
 <a name="website-deployment"/></a>
 ## Dash Deployment
 
+The Dash Deployment utilizes a combination of Python code and bootstrapping components. Documentation for all the Dash Bootsrap Components are documented [here](https://dash-bootstrap-components.opensource.faculty.ai/docs/components/).
+
+For the Deployment of Dash the most helpful resource has been [Adam Schroeder](https://www.linkedin.com/in/adam-schroeder-17b5a819/) A Community Manager at Plotly. His YouTube channel [Charming Data](https://www.youtube.com/c/CharmingData) provides a large sum of tutorials on all things Dash. For a specific tutroal on Dash Bootsrap see [this video](https://www.youtube.com/watch?v=0mfIK8zxUds) .
+
 <a name="references"/></a>
 ## References
 
