@@ -1,8 +1,10 @@
 import dash
 from dash import dcc, html
 import plotly.express as px
+import plotly.graph_objects as go
 import pandas as pd
 import pymssql
+from datetime import datetime as dt
 # from config import server
 # from config import database
 # from config import username
@@ -24,32 +26,38 @@ minNdx = df['Glucose'].idxmin()
 maxGlu = df['Glucose'][maxNdx]
 minGlu = df['Glucose'][minNdx]
 
-maxTmstmpStr = df['DeviceDtTM'][maxNdx]
-minTmstmpStr = df['DeviceDtTM'][minNdx]
+maxdt = dt.strptime(df['DeviceDtTM'][maxNdx], '%d/%m/%Y, %H:%M:%S')
+maxTime = maxdt.strftime("%I:%M %p")
 
-maxTmstmp = maxTmstmpStr.split(', ')
-minTmstmp = minTmstmpStr.split(', ')
+mindt = dt.strptime(df['DeviceDtTM'][minNdx], '%d/%m/%Y, %H:%M:%S')
+minTime = mindt.strftime("%I:%M %p")
 
-maxTm = maxTmstmp[1].split(':')
-minTm = minTmstmp[1].split(':')
+df['Time'] = None
 
-maxTime = maxTm[0] + ':' + maxTm[1]
-minTime = minTm[0] + ':' + minTm[1]
-
-maxDt = maxTmstmp[0].split('/2000')
-minDt = minTmstmp[0].split('/2000')
+for x in df.index:
+    a = dt.strptime(df['DeviceDtTM'][x], '%d/%m/%Y, %H:%M:%S')
+    df['Time'][x] = a.strftime("%I:%M %p")
 
 df['DeviceDtTM'] = df['DeviceDtTM'].astype('datetime64')
 
-lineChart = df[['DeviceDtTM','Glucose']]
-
-fig = px.line(lineChart, x='DeviceDtTM', y='Glucose', title='24-Hour Glucose Readings')
+fig = go.Figure(go.Scatter(x=df['DeviceDtTM'], y=df['Glucose']))
+fig.update_xaxes(title_text='Time')
+fig.update_yaxes(title_text='Glucose Level')
+fig.update_layout(
+    xaxis = dict(
+        tickmode = 'array',
+        tickvals = [df['DeviceDtTM'][35],df['DeviceDtTM'][71],df['DeviceDtTM'][107],df['DeviceDtTM'][143],
+        df['DeviceDtTM'][179],df['DeviceDtTM'][215],df['DeviceDtTM'][251]],
+        ticktext = [df['Time'][35],df['Time'][71],df['Time'][107],df['Time'][143],
+        df['Time'][179],df['Time'][215],df['Time'][251]]
+    )
+)
 
 layout = html.Div(children=[
-    html.H1(children='Glucose Tracker'),
+    html.H3(children='Glucose Tracker'),
 
     html.Div(children='''
-        Hello [name], here are your updated glucose levels over the last 24 hours
+        Hello Jane, here are your updated glucose levels over the last 24 hours
     '''),
 
     dcc.Graph(
@@ -57,11 +65,11 @@ layout = html.Div(children=[
         figure = fig
     ),
 
-    html.H3(children=f'''
-        Highest Glucose Reading is {maxGlu} at {maxTime}
+    html.H4(children=f'''
+        Highest Glucose Reading: {maxGlu} at {maxTime}
     '''),
 
-    html.H3(children=f'''
-        Lowest Glucose Reading is {minGlu} at {minTime}
+    html.H4(children=f'''
+        Lowest Glucose Reading: {minGlu} at {minTime}
     ''')
 ])
