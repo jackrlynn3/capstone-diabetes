@@ -80,19 +80,19 @@ dash.register_page(__name__, name='Indicators and Factors')
 
 fig1 = px.histogram(education, x="Education", y=['diabetes','prediabetes','diabetesRisk'],
                     barmode='group',
-                    histfunc='avg',)
+                    histfunc='sum',)
 
 fig2 = px.histogram(bmidist, x="bmicategory", y=['diabetes','prediabetes','diabetesRisk'],
                     barmode='group',
-                    histfunc='avg',)
+                    histfunc='sum',)
 
 fig3 = px.histogram(foodchoice, x="eatingout", y=['diabetes','prediabetes','diabetesRisk'],
                     barmode='group',
-                    histfunc='avg',)
+                    histfunc='sum',)
 
 fig4 = px.histogram(income, x="income", y=['diabetes','prediabetes','diabetesRisk'],
                     barmode='group',
-                    histfunc='avg',)
+                    histfunc='sum',)
 
 layout = html.Div(
     [
