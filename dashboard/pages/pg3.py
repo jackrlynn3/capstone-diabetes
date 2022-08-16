@@ -64,12 +64,12 @@ conditions = [
     (df6['mealsAtHome'] >= 8)
 ]
 
-values = ['Never', 'oncew a week', 'every other day', 'Daily','More than once a day']
+values = ['Never', 'Once a week', 'Every other day', 'Daily','More than once a day']
 
 df6['eatingout'] = np.select(conditions, values)
 
 education = df6[['diabetes','prediabetes','diabetesRisk','Education']]
-education['Education'] = education['Education'].replace(['Some College or Associates degree','No High School Diploma or GED','High School Diploma or GED/equivalent'],['Some College','No HS Diploma/GED','HS DIploma/GED'])
+education['Education'] = education['Education'].replace(['Some College or Associates degree','No High School Diploma or GED','High School Diploma or GED/equivalent'],['Some College','No HS Diploma/GED','HS Diploma/GED'])
 
 bmidist = df6[['diabetes','prediabetes','diabetesRisk','bmicategory']]
 
@@ -82,18 +82,23 @@ dash.register_page(__name__, name='Indicators and Factors')
 fig1 = px.histogram(education, x="Education", y=['diabetes','prediabetes','diabetesRisk'],
                     barmode='group',
                     histfunc='sum',)
+fig1.update_layout(xaxis={'categoryorder':'array', 'categoryarray':['Unknown','No HS Diploma/GED','HS Diploma/GED','Some College', 'Bachelors or Higher']},)
 
 fig2 = px.histogram(bmidist, x="bmicategory", y=['diabetes','prediabetes','diabetesRisk'],
                     barmode='group',
                     histfunc='sum',)
+fig2.update_layout(xaxis={'categoryorder':'array', 'categoryarray':['underweight','normal','overweight','obese']},)
 
 fig3 = px.histogram(foodchoice, x="eatingout", y=['diabetes','prediabetes','diabetesRisk'],
                     barmode='group',
                     histfunc='sum',)
+fig3.update_layout(xaxis={'categoryorder':'array', 'categoryarray':['Never','Once a week','Every other day','Daily', 'More than once a day']},)
 
 fig4 = px.histogram(income, x="income", y=['diabetes','prediabetes','diabetesRisk'],
                     barmode='group',
                     histfunc='sum',)
+fig4.update_layout(xaxis={'categoryorder':'array', 'categoryarray':['Unknown','less than 5,000','5,000 to 9,999','10,000 to 14,999', '15,000 to 19,999','Under 20,000','20,000 and Over','20,000 to 24,999',
+                    '25,000 to 34,999','35,000 to 44,999','45,000 to 54,999','55,000 to 64,999','65,000 to 74,999','75,000 to 99,999','100,000 and Over']},)
 
 layout = html.Div(
     [
