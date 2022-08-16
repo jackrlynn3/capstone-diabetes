@@ -21,7 +21,7 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 4. **[Machine Learning](#machine-learning)**
 5. **[Deep Learning](#deep-learning)**
 6. **[Visualizations](#visualizations)**
-7. **[Website Deployment](#website-deployment)**
+7. **[Dash Deployment](#dash-deployment)**
 8. **[References](#references)**
 
 <a name="datasets"></a>
