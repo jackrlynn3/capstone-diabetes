@@ -37,7 +37,7 @@ foodstates = foodstates[foodstates.stateID != 'US']
 edustates = merg2.loc[merg2['category'] == 'education level']
 edustates = edustates[["stateID", "percent","demo_group"]]
 edustates.rename(columns = {'demo_group':'education'}, inplace = True)
-
+edustates['education'] = edustates['education'].replace(['Bachelors Degreee',],['Bachelors Degree',])
 
 dash.register_page(__name__, name='Diabetes Demographics')
 
@@ -71,11 +71,29 @@ layout = html.Div(
         dbc.Row(
             [
                 dbc.Col(
-                dcc.Dropdown(id="slct_state1", options =[{'label':x, 'value':x} for x in incomestates.sort_values('income bracket')['income bracket'].unique()],
+                dcc.Dropdown(id="slct_state1", 
+                options=[
+                     {'label': 'Less than 10,000', 'value': 'Less than 10,000'},
+                     {'label': '10,000 to 14,999', 'value': '10,000 to 14,999'},
+                     {'label': '15,000 to 24,999', 'value': '15,000 to 24,999'},
+                     {'label': '25,000 to 34,999', 'value': '25,000 to 34,999'},
+                     {'label': '35,000 to 49,999', 'value': '35,000 to 49,999'},
+                     {'label': '50,000 to 74,999', 'value': '50,000 to 74,999'},
+                     {'label': '75,000 to 99,999', 'value': '75,000 to 99,999'},
+                     {'label': '100,000 to 149,999', 'value': '100,000 to 149,999'},
+                     {'label': '150,000 to 199,999', 'value': '150,000 to 199,999'},
+                     {'label': '200,000 or more', 'value': '200,000 or more'},
+                ],
                         value='Less than 10,000'),width=4
                 ),
                 dbc.Col(
-                dcc.Dropdown(id="slct_state2", options =[{'label':x, 'value':x} for x in edustates.sort_values('education')['education'].unique()],
+                dcc.Dropdown(id="slct_state2",
+                options=[
+                     {'label': 'Less than high school graduate', 'value': 'Less than high school graduate'},
+                     {'label': 'High school graduate (includes equivalency)', 'value': 'High school graduate (includes equivalency)'},
+                     {'label': 'Some college or associate degree', 'value': 'Some college or associate degree'},
+                     {'label': 'Bachelors Degree', 'value': 'Bachelors Degree'},
+                ],
                         value='Less than high school graduate'), width= 4
                 ),
                 dbc.Col(
