@@ -1,18 +1,17 @@
 # Diabetes in USA: *Who is at risk?*
 
-Non-communicable diseases dominate disease burden within the developed world; diabetes has the seventh largest disease burden in the United States and continues to grow year-by-year. [[1]](https://vizhub.healthdata.org/gbd-compare/) Like most non-communicable diseases, genetic, lifestyle, and community factors differentially potentiate diabetes incidence. **To advocate effectively for diabetes as a public health burden, one must determine the communities most affected by it, the underlying medical risk factors that increase the likelihood of development, and its current maintenance and treatment methods.** In this capstone project, we are creating a holistic narrative of the disease burden of diabetes in the United States from a public health perspective. First, CDC [[2]](https://www.kaggle.com/datasets/cdc/national-health-and-nutrition-examination-survey) [[3]](https://www.cdc.gov/nccdphp/dnpao/data-trends-maps/index.html) [[4]](https://chronicdata.cdc.gov/Chronic-Disease-Indicators/U-S-Chronic-Disease-Indicators-Diabetes/f8ti-h92k/data), Census [[5]](https://data.census.gov/cedsci/table?q=education%20by%20state&tid=ACSDT5Y2020.B06009) [[6]](https://data.census.gov/cedsci/table?q=S1901&tid=ACSST5Y2020.S1901), and Department of Agriculture [[7]](https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s/interactive-charts-and-highlights/) data are used to determine who is most affected by diabetes, including special interest explorations of race, ethnicity, sex, age, income, food security, and exercise. Second, the Rui-Ci Health Center's diabetes and medical characteristics dataset [[8]](https://doi.org/10.5061/dryad.ft8750v) is used in machine learning models to predict the underlying physical characteristics that coincide with diabetes diagnoses, emphasizing the connection between community demographics and health manifestations. Third, deep learning techniques are used on Jaeb Center blood glucose traces [[9]](https://public.jaeb.org/dataset/563) to develop a tool for tracking and alerting diabetic individuals of blood glucose spikes, thus creating a holistic view of diabetes patients pre- and post-diagnosis. All project methods emphasize the use of cheap data science techniques to refine and target diabetes disease burden control within the United States, with special emphasis on creating a holistic view of diabetes from a public health perspective. The findings of this project can then be used for efficient and effective targeted advocacy for those most affected.
+Non-communicable diseases dominate disease burden within the developed world; diabetes contributes the seventh largest number of DALYs in the United States and continues to grow year-by-year. [[1]](https://vizhub.healthdata.org/gbd-compare/) Like most non-communicable diseases, genetic, lifestyle, and community factors differentially potentiate diabetes incidence. **To advocate effectively for diabetes as a public health burden, one must determine the communities most affected by it, the underlying medical risk factors that increase the likelihood of development, and its current maintenance and treatment methods.** In this capstone project, we are creating a holistic narrative of the disease burden of diabetes in the United States from a public health perspective. First, CDC [[2]](https://www.kaggle.com/datasets/cdc/national-health-and-nutrition-examination-survey) [[3]](https://www.cdc.gov/nccdphp/dnpao/data-trends-maps/index.html) [[4]](https://chronicdata.cdc.gov/Chronic-Disease-Indicators/U-S-Chronic-Disease-Indicators-Diabetes/f8ti-h92k/data), Census [[5]](https://data.census.gov/cedsci/table?q=education%20by%20state&tid=ACSDT5Y2020.B06009) [[6]](https://data.census.gov/cedsci/table?q=S1901&tid=ACSST5Y2020.S1901), and Department of Agriculture [[7]](https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s/interactive-charts-and-highlights/) data are used to determine who is most affected by diabetes, including special interest explorations of race, ethnicity, sex, age, income, food security, and exercise. Second, the Rui-Ci Health Center's diabetes and medical characteristics dataset [[8]](https://doi.org/10.5061/dryad.ft8750v) is used in machine learning models to predict the underlying physical characteristics that coincide with diabetes diagnoses, emphasizing the connection between community demographics and health manifestations. Third, deep learning techniques are used on Jaeb Center blood glucose traces [[9]](https://public.jaeb.org/dataset/563) to develop a tool for tracking and alerting diabetic individuals of blood glucose spikes, thus creating a holistic view of diabetes patients pre- and post-diagnosis. All project methods emphasize the use of cheap data science techniques to refine and target diabetes disease burden control within the United States, with special emphasis on creating a holistic view of diabetes from a public health perspective. The findings of this project can then be used for efficient and effective targeted advocacy.
 
 This capstone project is the creation of [**Temesgen Fekadu**](https://github.com/TemesgenFekadu01), [**Jack Lynn**](https://github.com/jackrlynn3), [**Hayden Muscha**](https://github.com/HaydenKMuscha), and [**Sam Wainright**](https://github.com/wainrightsamantha), in coordination with the [**Dev10 Data Bootcamp**](https://www.genesis10.com/).
 
 ### Essential Questions
 1. Which demographics are most likely to develop diabetes in the US?  
-2. What measurable bodily attributes contribute to the indication of diabetes?  
-3. How are diabetes patients' blood glucose levels tracked in real time?  
-4. Which demographics are exhibiting higher spikes in blood glucose levels?  
-5. Looking at specific regions within the US, how do different lifestyles contribute to diabetes prevalence?  
-6. Does food scarcity impact diabetes incidence?  
-7. Can we predict diabetes diagnoses based on readily available medical vitals, such as blood pressure, mineral levels, and body mass index? 
-8. Can we predict warning notifications for dangerous blood glucose spikes based on real time blood glucose levels of Type-1 diabetes patients? 
+2. What measurable bodily attributes suggest the presence of diabetes?  
+3. How are diabetes patients' blood glucose levels tracked in real time?   
+4. Are certain regions of the United States more affected by diabetes than others?
+5. Does food scarcity impact diabetes incidence?  
+6. Can we predict diabetes diagnoses based on readily available medical vitals, such as blood pressure, mineral levels, and body mass index? 
+7. Can we predict warning notifications for dangerous blood glucose spikes based on real time blood glucose data of Type-1 diabetes patients? 
 
 ## Table of Contents
 1. **[Datasets](#datasets)**
@@ -27,9 +26,9 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 <a name="datasets"></a>
 ## Datasets
 
-[**"A Randomized Clinical Trial to Assess the Efficacy and Safety of Continuous Glucose Monitoring in Youth < 8 with Type 1 Diabetes", from JAEB Center:**](https://public.jaeb.org/dataset/563) Medical profiles and blood glucose traces from Type-1 diabetes patients in clinical trial for blood glucose monitoring device; used to track blood glucose levels in real time and predict hazardous blood glucose spikes using deep learning
+[**"A Randomized Clinical Trial to Assess the Efficacy and Safety of Continuous Glucose Monitoring in Youth < 8 with Type 1 Diabetes", from JAEB Center:**](https://public.jaeb.org/dataset/563) Medical profiles and blood glucose traces from Type-1 diabetes patients in a clinical trial for a blood glucose monitoring device; used to track blood glucose levels in real time and predict hazardous blood glucose spikes using deep learning
 
-[**Aerobic Activity by State:**](https://www.cdc.gov/nccdphp/dnpao/data-trends-maps/index.html) CDC ongoing study investigating health trends by state in the US; used to assess the proportion of state populations that participate in at least 150 minutes of aerobic activity weekly
+[**Aerobic Activity by State:**](https://www.cdc.gov/nccdphp/dnpao/data-trends-maps/index.html) CDC ongoing study investigating health trends by state in the U.S.; used to assess the proportion of state populations that participate in at least 150 minutes of aerobic activity weekly
 
 [**"Association of body mass index and age with incident diabetes in Chinese adults: a population-based cohort study", from Ruici Healthcare:**](https://datadryad.org/stash/dataset/doi:10.5061/dryad.ft8750v) Large Chinese sample (>200,000 subjects) describing medical vitals and diabetes diagnoses; used to train machine learning model to predict diabetes diagnoses based on basic medical measurements
 
@@ -41,7 +40,7 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 
 [**S1901: Income in the Past 12 Months (In 2020 Inflation-Adjusted Dollars):**](https://data.census.gov/cedsci/table?q=S1901&tid=ACSST5Y2020.S1901) U.S. Census data describing income brackets by state; used to assess potential connections between income brackets and diabetes diagnoses 
 
-[**U.S. Chronic Disease Indicators: Diabetes:**](https://chronicdata.cdc.gov/Chronic-Disease-Indicators/U-S-Chronic-Disease-Indicators-Diabetes/f8ti-h92k/data) CDC tracking of diabetes prevalence by state, race, and ethnicty; used to describe what demographic groups are make up the United States diabetic population
+[**U.S. Chronic Disease Indicators: Diabetes:**](https://chronicdata.cdc.gov/Chronic-Disease-Indicators/U-S-Chronic-Disease-Indicators-Diabetes/f8ti-h92k/data) CDC tracking of diabetes prevalence by state, race, and ethnicity; used to describe what demographic groups make up the U.S. diabetic population
 
 <a name="project-structure"/></a>
 ## Project & File Structure
@@ -52,13 +51,13 @@ _Network diagram describing the flow and transformation of data and the tools us
 
 ### Data Extraction, Transformation, and Loading
 
-*A full ETL description document can be found under [`/report/RepeatableETLReport.pdf`](https://github.com/jackrlynn3/capstone-diabetes/blob/main/report/RepeatableETLReport.pdf).*
+*A full ETL description document can be found under [`/project-specifications/RepeatableETLReport.pdf`](https://github.com/jackrlynn3/capstone-diabetes/blob/main/project-specifications/RepeatableETLReport.pdf).*
 
 Data collections are sourced from the CDC, JAEB, Ruici Healthcare, U.S. Census Department, and U.S. Department of Agriculture; a full description of each dataset can be seen [here](#datasets). All datasets are downloaded directly from their respective websites and saved locally as `.csv` files.
 
-Each file is transformed using `.ipyn` notebooks run on local machines; these notebooks can be found in their dataset's respective directories under [`/datasets/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/datasets). The files heavily use the `numpy` and `pandas` libraries and typically conver the following transformations: (1) null fields, (2) column drops, (3) inconsistent/unusable typing, (4) outlier handling, and (5) schema simplifcation. Finally, all of these files are saved as `.csv` files and uploaded to this group's Azure Data Lake.
+Each file is transformed using `.ipyn` notebooks run on local machines; these notebooks can be found in their datasets' respective directories under [`/etl/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/etl). The files heavily use the `numpy` and `pandas` libraries and typically cover the following transformations: (1) null fields, (2) column drops, (3) inconsistent/unusable typing, (4) outlier handling, and (5) schema simplifcation. Finally, all of these files are saved as `.csv` files and uploaded to this group's Azure Data Lake.
 
-Each file is then transformed again and loaded into Azure SQL Databases using Azure Databricks; a full description of the SQL schema can be found [here](#sql-database). Each respective database is first loaded into the Azure Database using SQL inquiries in Azure Data Studio, which can be found under [`/datasets/sql-queries/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/datasets/sql-queries). Kafka files in Azure Databricks then take in the corresponding `.csv` files from the Azure Data Lake, transforms them into the schema of the SQL database, and then loads this group's Azure SQL database; these Kafka files can be found in [`/datasets/kafka/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/datasets/kafka).
+Each file is then transformed again and loaded into Azure SQL Databases using Azure Databricks; a full description of the SQL schema can be found [here](#sql-database). Each respective database is first loaded into the Azure Database using SQL inquiries in Azure Data Studio, which can be found under [`/etl/sql-queries/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/etl/sql-queries). Kafka files in Azure Databricks then take in the corresponding `.csv` files from the Azure Data Lake, transforms them into the schema of the SQL database, and then loads this group's Azure SQL database; these Kafka files can be found in [`/etl/kafka/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/etl/kafka).
 
 ### Streaming
 
@@ -86,12 +85,12 @@ The website can be found [here]().
 
 ### Reporting
 
-The procedures and findings of this project can be found in one of several reports found under [`/presentation/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/presentation) and [`/report/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/report) directories. Summaries of the reports are the following:
+The procedures and findings of this project can be found in one of several reports found under [`/project-specifications/`](https://github.com/jackrlynn3/capstone-diabetes/tree/main/project-specifications) directories. Summaries of the reports are the following:
 
-1. [`ExecutiveSummary.pdf`:](https://github.com/jackrlynn3/capstone-diabetes/blob/main/report/ExecutiveSummary.pdf) Description of the high-level aims of the project, including introduction to project, key questions, datasets, and sources
-2. [`ExploratoryQuestions.pdf`:](https://github.com/jackrlynn3/capstone-diabetes/blob/main/report/ExploratoryQuestions.pdf) Description of all essential exploratory questions that are answered by this project.
-3. [`RepeatableETLReport.pdf`:](https://github.com/jackrlynn3/capstone-diabetes/blob/main/report/RepeatableETLReport.pdf) In-depth description of ETL process to get from raw data sourcing to loaded SQL database.
-4. [`VisualizationsDashboardNapkinsAndFeedback.pdf`:](https://github.com/jackrlynn3/capstone-diabetes/blob/main/report/VisualizationsDashboardNapkinsAndFeedback.pdf) Napkin drawing for all dashboards used in the project and their respective peer feedback.
+1. [`ExecutiveSummary.pdf`:](https://github.com/jackrlynn3/capstone-diabetes/blob/main/project-specifications/ExecutiveSummary.pdf) Description of the high-level aims of the project, including introduction to project, key questions, datasets, and sources
+2. [`ExploratoryQuestions.pdf`:](https://github.com/jackrlynn3/capstone-diabetes/blob/main/project-specifications/ExploratoryQuestions.pdf) Description of all essential exploratory questions that are answered by this project.
+3. [`RepeatableETLReport.pdf`:](https://github.com/jackrlynn3/capstone-diabetes/blob/main/project-specifications/RepeatableETLReport.pdf) In-depth description of ETL process to get from raw data sourcing to loaded SQL database.
+4. [`VisualizationsDashboardNapkinsAndFeedback.pdf`:](https://github.com/jackrlynn3/capstone-diabetes/blob/main/project-specifications/VisualizationsDashboardNapkinsAndFeedback.pdf) Napkin drawing for all dashboards used in the project and their respective peer feedback.
 5. [`ProjectTechnicalReport.pdf`](): Full report describing methods, results, and analysis of all methods within this project.
 6. [`CapstonePresentationSlides.pdf`](): Presentation slide deck describing the results of this project.
 
