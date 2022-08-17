@@ -1,12 +1,28 @@
+import os
+# ML libraries
+import joblib
+from joblib import load
+import pandas as pd
+
+# Plotly and Dash libraries
 import dash
 from dash import Dash, dcc, html, Input, Output
 from dash import dcc, html, callback, Output, Input
 import plotly.express as px
 import dash_bootstrap_components as dbc
-import pandas as pd
-from dash import html, dcc
 import pymssql
+
+os.chdir('../..')
+home_path = os.getcwd()
+models_path = os.path.join(home_path,('/models/machine-learning/models/'))
+
+selected_features=load(models_path,'sorted_features.pk1')
+
+
+
+
 dash.register_page(__name__, name='Predicting Diabetes')
+
 
 layout = html.Div(
     [
