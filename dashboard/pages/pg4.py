@@ -14,13 +14,13 @@ import dash_bootstrap_components as dbc
 import pymssql
 
 # os.chdir('../..')
-home_path = os.getcwd()
+# home_path = os.getcwd()
 
-models_path = os.path.join(home_path,'models/machine-learning/models')
-models_path
+# models_path = os.path.join(home_path,'models/machine-learning/models')
+# models_path
 
 #anova selected features
-selected_featuresDF = joblib.load(os.path.join(models_path, 'sorted_features.joblib'))
+selected_featuresDF = pd.read_csv('https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/models/machine-learning/models/sorted_features.csv')
 df = selected_featuresDF.sort_values(by='Anova_Score', ascending=True)
 fig = px.bar(df, x='Anova_Score',y='Feature')
 fig.update_layout(title="Anova Score of Features",
@@ -56,9 +56,7 @@ layout = html.Div(
             [
                 dbc.Col(
                     [
-                    dcc.Graph(
-                        id='selected_features',
-                        figure=fig),
+                    html.Img(src='https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/visualizations/machine-learning/ROC_AUC_LSVC.png')
                     ], width=4
                 ),
                 dbc.Col(
@@ -77,3 +75,11 @@ layout = html.Div(
 #     [Input(component_id)]
     
 #     )
+
+                # dbc.Col(
+                #     [
+                #     dcc.Graph(
+                #         id='selected_features',
+                #         figure=fig),
+                #     ], width=4
+                # ),
