@@ -2,6 +2,7 @@ import os
 # ML libraries
 import joblib
 from joblib import load
+import pickle
 import pandas as pd
 
 # Plotly and Dash libraries
@@ -12,17 +13,21 @@ import plotly.express as px
 import dash_bootstrap_components as dbc
 import pymssql
 
-os.chdir('../..')
+# os.chdir('../..')
 home_path = os.getcwd()
-models_path = os.path.join(home_path,('/models/machine-learning/models/'))
 
-selected_features=load(models_path,'sorted_features.pk1')
+models_path = os.path.join(home_path,'models/machine-learning/models')
+models_path
 
+selected_featuresDF = joblib.load(os.path.join(models_path, 'sorted_features.joblib'))
 
-
+df = selected_featuresDF.sort_values(by='Anova_Score', ascending=True)
+fig = px.bar(df, x='Anova_Score',y='Feature')
+fig.update_layout(title="Anova Score of Features",
+                yaxis_title=None)
+fig.show()
 
 dash.register_page(__name__, name='Predicting Diabetes')
-
 
 layout = html.Div(
     [
@@ -52,15 +57,10 @@ layout = html.Div(
             [
                 dbc.Col(
                     [
-                    (html.Img(
-                        src=('https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/visualizations/machine-learning/SF_anova_scores.png'),
-                        style={
-                            'width':'10%',
-                            'height':'10%'
-                            }
-                            )
-                    )
-                    ],
+                    dcc.Graph(
+                        id='selected_features',
+                        figure={}),
+                    ], width=4
                 ),
                 dbc.Col(
                     [
@@ -71,3 +71,7 @@ layout = html.Div(
         ),
     ]
 )
+@ callback(
+    Output(component_id='selected_features',
+    component_property='figure'),
+    [Input(component_id))
