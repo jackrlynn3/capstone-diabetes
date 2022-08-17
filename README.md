@@ -130,7 +130,7 @@ Models are evaluated on their ROC AUC and precision-recall metrics. Following a 
 <a name="deep-learning"/></a>
 ## Deep Learning
 
-Deep learning (DL) is used to predict when Type I diabetes patients have hazrdous and dangerous blood glucose spikes (defined here as 180 mmol/L and 300 mmol/L, respectively) at before they happen. The tools used to form the DL models are `TensorFlow` and Google Colab.
+Deep learning (DL) is used to predict when Type I diabetes patients have hazardous and dangerous blood glucose spikes (defined here as 180 mmol/L and 300 mmol/L, respectively) at before they happen. The tools used to form the DL models are `TensorFlow` and Google Colab.
 
 [`TensorFlow`](https://www.tensorflow.org/) is the choosen libray for DL because it contains a wide breadth of tools for training all types of DL models quickly and simply; additionally, all major DL layer types are covered by the library. `.ipynb` in [Google Colab](https://colab.research.google.com/?utm_source=scs-index) is the primary training space for DL models primarily for its GPU-accelerated training capabilities and its built in environment for `TensorFlow`. Training DL networks with GPU capacities can reduce training time by around 85%, with much less memory and RAM demands. [[10]](https://datamadness.github.io/TensorFlow2-CPU-vs-GPU)
 
