@@ -19,13 +19,12 @@ home_path = os.getcwd()
 models_path = os.path.join(home_path,'models/machine-learning/models')
 models_path
 
+#anova selected features
 selected_featuresDF = joblib.load(os.path.join(models_path, 'sorted_features.joblib'))
-
 df = selected_featuresDF.sort_values(by='Anova_Score', ascending=True)
 fig = px.bar(df, x='Anova_Score',y='Feature')
 fig.update_layout(title="Anova Score of Features",
                 yaxis_title=None)
-fig.show()
 
 dash.register_page(__name__, name='Predicting Diabetes')
 
@@ -59,7 +58,7 @@ layout = html.Div(
                     [
                     dcc.Graph(
                         id='selected_features',
-                        figure={}),
+                        figure=fig),
                     ], width=4
                 ),
                 dbc.Col(
@@ -71,7 +70,10 @@ layout = html.Div(
         ),
     ]
 )
-@ callback(
-    Output(component_id='selected_features',
-    component_property='figure'),
-    [Input(component_id))
+
+# @ callback(
+#     Output(component_id='selected_features',
+#     component_property='figure'),
+#     [Input(component_id)]
+    
+#     )
