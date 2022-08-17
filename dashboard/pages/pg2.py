@@ -13,7 +13,7 @@ from sklearn.model_selection import train_test_split
 dash.register_page(__name__, name='Predicting Diabetes')
 
 # feature selection bar graph
-selected_featuresDF = pd.read_csv('https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/models/machine-learning/models/sorted_features.csv')
+selected_featuresDF = pd.read_csv('dashboard/assets/sorted_features.csv')
 df = selected_featuresDF.sort_values(by='Anova_Score', ascending=True)
 fig = px.bar(df, x='Anova_Score',y='Feature',title="Anova Score of Features",color_discrete_sequence=['Teal']*len(df))
 fig.update_layout(title_x=0.5,
