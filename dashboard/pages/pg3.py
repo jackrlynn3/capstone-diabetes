@@ -114,17 +114,13 @@ layout = html.Div(
     [
         dbc.Row(
             [
-                dcc.Markdown('# Indicators and factors of Diabetes Type 2')
+                dcc.Markdown('#### National Health and Nutrition Survey (NHANES) Responders and Diabetes')
             ],
         ),
         dbc.Row(
             [
                 dcc.Markdown('''
-                    Indicators of Diabetes Type 2
-                    
-                    with multiple lines of text
-                    
-                    what is to be put here is to be decided
+                    Here we looked at the Education Level, BMI groupings, The Frequency of Eating out, and Income Levels of NHANES respondents that have diabetes, are at risk for diabetes, and are described as pre-diabetic.
                 ''')
             ],
         ),
