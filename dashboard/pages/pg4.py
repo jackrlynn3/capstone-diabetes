@@ -6,6 +6,9 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 from dash import html, dcc
 import pymssql
+import pickle
+from sklearn.metrics import  confusion_matrix, classification_report, roc_auc_score, auc, roc_curve
+from sklearn.model_selection import train_test_split
 
 dash.register_page(__name__, name='Predicting Diabetes')
 
@@ -13,7 +16,8 @@ dash.register_page(__name__, name='Predicting Diabetes')
 selected_featuresDF = pd.read_csv('https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/models/machine-learning/models/sorted_features.csv')
 df = selected_featuresDF.sort_values(by='Anova_Score', ascending=True)
 fig = px.bar(df, x='Anova_Score',y='Feature',title="Anova Score of Features")
-fig.update_layout(title_x=0.5,yaxis_title=None)
+fig.update_layout(title_x=0.5,yaxis_title=None,xaxis_title='Anova Score')
+
 
 layout = html.Div(
     [
