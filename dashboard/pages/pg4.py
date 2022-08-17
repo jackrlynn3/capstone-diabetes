@@ -15,8 +15,13 @@ dash.register_page(__name__, name='Predicting Diabetes')
 # feature selection bar graph
 selected_featuresDF = pd.read_csv('https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/models/machine-learning/models/sorted_features.csv')
 df = selected_featuresDF.sort_values(by='Anova_Score', ascending=True)
-fig = px.bar(df, x='Anova_Score',y='Feature',title="Anova Score of Features")
-fig.update_layout(title_x=0.5,yaxis_title=None,xaxis_title='Anova Score')
+fig = px.bar(df, x='Anova_Score',y='Feature',title="Anova Score of Features",color_discrete_sequence=['Teal']*len(df))
+fig.update_layout(title_x=0.5,
+                yaxis_title=None,
+                xaxis_title='Anova Score',
+                width=500,
+                height=700,
+                bargap=0.05)
 
 
 layout = html.Div(
@@ -36,7 +41,10 @@ layout = html.Div(
                     ''')
                 ),
                 dbc.Col(
-                    html.Img(src='https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/visualizations/machine-learning/LSVCConfusionMatrix.png')
+                    [
+                    dcc.Graph(id='feature_selection',
+                    figure=fig)
+                    ], width = 6
                 ),
                 html.Div(html.Br())
             ],
@@ -45,10 +53,7 @@ layout = html.Div(
         dbc.Row(
             [
                 dbc.Col(
-                    [
-                    dcc.Graph(id='feature_selection',
-                    figure=fig)
-                    ], width = 6
+                    html.Img(src='https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/visualizations/machine-learning/LSVCConfusionMatrix.png')
                 ),
                 dbc.Col(
                     [
