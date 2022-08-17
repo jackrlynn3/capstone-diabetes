@@ -20,11 +20,11 @@ import pymssql
 # models_path
 
 #anova selected features
-selected_featuresDF = pd.read_csv('https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/models/machine-learning/models/sorted_features.csv')
-df = selected_featuresDF.sort_values(by='Anova_Score', ascending=True)
-fig = px.bar(df, x='Anova_Score',y='Feature')
-fig.update_layout(title="Anova Score of Features",
-                yaxis_title=None)
+# selected_featuresDF = pd.read_csv('https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/models/machine-learning/models/sorted_features.csv')
+# df = selected_featuresDF.sort_values(by='Anova_Score', ascending=True)
+# fig = px.bar(df, x='Anova_Score',y='Feature')
+# fig.update_layout(title="Anova Score of Features",
+#                 yaxis_title=None)
 
 dash.register_page(__name__, name='Predicting Diabetes')
 
