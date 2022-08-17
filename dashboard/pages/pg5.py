@@ -43,7 +43,7 @@ df['DeviceDtTM'] = df['DeviceDtTM'].astype('datetime64')
 
 fig = go.Figure(go.Scatter(x=df['DeviceDtTM'], y=df['Glucose']))
 fig.update_xaxes(title_text='Time')
-fig.update_yaxes(title_text='Glucose Level')
+fig.update_yaxes(title_text='Blood Glucose Level (mg/dL)')
 fig.update_layout(
     xaxis = dict(
         tickmode = 'array',
@@ -55,10 +55,10 @@ fig.update_layout(
 )
 
 layout = html.Div(children=[
-    html.H3(children='Glucose Tracker'),
+    html.H3(children='Blood Glucose Tracker'),
 
     html.Div(children='''
-        Hello Jane, here are your updated glucose levels over the last 24 hours
+        Hello Jane, here are your updated blood glucose levels over the last 24 hours
     '''),
 
     dcc.Graph(
@@ -75,7 +75,7 @@ layout = html.Div(children=[
 
     html.P(id='max',
         children=[
-            html.Span('Highest Glucose Reading: '),
+            html.Span('Highest Blood Glucose Reading: '),
             html.Strong(f'{maxGlu}'),
             html.Span(f' mg/dL at {maxTime}')],
             style={'color':'#000000'}
@@ -83,7 +83,7 @@ layout = html.Div(children=[
 
     html.P(id='min',
         children=[
-            html.Span('Lowest Glucose Reading: '),
+            html.Span('Lowest Blood Glucose Reading: '),
             html.Strong(f'{minGlu}'),
             html.Span(f' mg/dL at {minTime}')],
             style={'color':'#000000'}
@@ -108,7 +108,7 @@ def update_graph(n):
 
     fig = go.Figure(go.Scatter(x=df['DeviceDtTM'], y=df['Glucose']))
     fig.update_xaxes(title_text='Time')
-    fig.update_yaxes(title_text='Glucose Level')
+    fig.update_yaxes(title_text='Blood Glucose Level (mg/dL)')
     fig.update_layout(
         xaxis = dict(
             range=[min(df['DeviceDtTM']),max(df['DeviceDtTM'])],
@@ -134,7 +134,7 @@ def update_max(n):
     maxdt = dt.strptime(maxTmStr, '%m/%d/%Y, %H:%M:%S')
     maxTime = maxdt.strftime("%I:%M %p")
 
-    return [html.Span('Highest Glucose Reading: '),html.Strong(f'{maxGlu}'),html.Span(f' mg/dL at {maxTime}')]
+    return [html.Span('Highest Blood Glucose Reading: '),html.Strong(f'{maxGlu}'),html.Span(f' mg/dL at {maxTime}')]
 
 @callback(Output('min','children'),[Input('graph-update','n_intervals')])
 
@@ -147,4 +147,4 @@ def update_max(n):
     mindt = dt.strptime(minTmStr, '%m/%d/%Y, %H:%M:%S')
     minTime = mindt.strftime("%I:%M %p")
 
-    return [html.Span('Lowest Glucose Reading: '),html.Strong(f'{minGlu}'),html.Span(f' mg/dL at {minTime}')]
+    return [html.Span('Lowest Blood Glucose Reading: '),html.Strong(f'{minGlu}'),html.Span(f' mg/dL at {minTime}')]
