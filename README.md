@@ -11,7 +11,7 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 4. Are certain regions of the United States more affected by diabetes than others?
 5. Does food scarcity impact diabetes incidence?  
 6. Can we predict diabetes diagnoses based on readily available medical vitals, such as blood pressure, mineral levels, and body mass index? 
-7. Can we predict warning notifications for dangerous blood glucose spikes based on real time blood glucose data of Type-1 diabetes patients? 
+7. Can we predict blood glucose levels of Type-1 diabetes patients at least 30 minutes ahead in order to warn about incoming hazardous spikes?
 
 ## Table of Contents
 1. **[Datasets](#datasets)**
