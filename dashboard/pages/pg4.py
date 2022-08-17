@@ -125,10 +125,12 @@ layout = html.Div(
         ),
         dbc.Row(
             [
+                dcc.Markdown('''#### Call to action:'''),
                 dcc.Markdown('''
-                ####Call to action:
 
-                The Maps that infer the closets similarity with both the Diabetes Distribution in the U.S. and the Indicators from the NHANES are Educational Attainment, and Food Insecurity. From this we would recommend a stronger push in these regions (primarily the southeast), to increase the availability of nutritious affordable food in these areas. Alongside this, a national push for greater educational attainment in these regions as well.
+                The maps that infer the closets similarity with both the Diabetes Distribution in the U.S. and the Indicators from the NHANES are Educational Attainment, and Food Insecurity. 
+                From this we would recommend a stronger push in these regions (primarily the southeast), to increase the availability of nutritious affordable food in these areas. 
+                Alongside this, a national push for greater educational attainment to help spur greater income in these regions as well.
 
                 ''')
             ],
