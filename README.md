@@ -26,7 +26,7 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 <a name="datasets"></a>
 ## Datasets
 
-[**"A Randomized Clinical Trial to Assess the Efficacy and Safety of Continuous Glucose Monitoring in Youth < 8 with Type 1 Diabetes", from JAEB Center:**](https://public.jaeb.org/dataset/563) Medical profiles and blood glucose traces from Type-1 diabetes patients in a clinical trial for a blood glucose monitoring device; used to track blood glucose levels in real time and predict hazardous blood glucose spikes using deep learning
+[**"A Randomized Clinical Trial to Assess the Efficacy of Real-Time Continuous Glucose Monitoring in the Management of Type 1 Diabetes", from JAEB Center:**](https://public.jaeb.org/dataset/563) Medical profiles and blood glucose traces from Type-1 diabetes patients in a clinical trial for a blood glucose monitoring device; used to track blood glucose levels in real time and predict hazardous blood glucose spikes using deep learning
 
 [**Aerobic Activity by State:**](https://www.cdc.gov/nccdphp/dnpao/data-trends-maps/index.html) CDC ongoing study investigating health trends by state in the U.S.; used to assess the proportion of state populations that participate in at least 150 minutes of aerobic activity weekly
 
