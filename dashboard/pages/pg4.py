@@ -38,9 +38,6 @@ layout = html.Div(
                 dbc.Col(
                     html.Img(src='https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/visualizations/machine-learning/LSVCConfusionMatrix.png')
                 ),
-                dbc.Col(
-                    html.Img(src='https://raw.githubusercontent.com/jackrlynn3/capstone-diabetes/main/visualizations/machine-learning/CM_Tuned_SF_SVC.png')
-                ),
                 html.Div(html.Br())
             ],
         ),
