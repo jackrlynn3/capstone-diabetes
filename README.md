@@ -1,4 +1,4 @@
-# Diabetes in USA: *Who is at risk?*
+# Diabetes in USA: *Public Health Led by Data*
 
 Non-communicable diseases dominate disease burden within the developed world; diabetes contributes the seventh largest number of DALYs in the United States and continues to grow year-by-year. [[1]](https://vizhub.healthdata.org/gbd-compare/) Like most non-communicable diseases, genetic, lifestyle, and community factors differentially potentiate diabetes incidence. **To advocate effectively for diabetes as a public health burden, one must determine the communities most affected by it, the underlying medical risk factors that increase the likelihood of development, and its current maintenance and treatment methods.** In this capstone project, we are creating a holistic narrative of the disease burden of diabetes in the United States from a public health perspective. First, CDC [[2]](https://www.kaggle.com/datasets/cdc/national-health-and-nutrition-examination-survey) [[3]](https://www.cdc.gov/nccdphp/dnpao/data-trends-maps/index.html) [[4]](https://chronicdata.cdc.gov/Chronic-Disease-Indicators/U-S-Chronic-Disease-Indicators-Diabetes/f8ti-h92k/data), Census [[5]](https://data.census.gov/cedsci/table?q=education%20by%20state&tid=ACSDT5Y2020.B06009) [[6]](https://data.census.gov/cedsci/table?q=S1901&tid=ACSST5Y2020.S1901), and Department of Agriculture [[7]](https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the-u-s/interactive-charts-and-highlights/) data are used to determine who is most affected by diabetes, including special interest explorations of race, ethnicity, sex, age, income, food security, and exercise. Second, the Rui-Ci Health Center's diabetes and medical characteristics dataset [[8]](https://doi.org/10.5061/dryad.ft8750v) is used in machine learning models to predict the underlying physical characteristics that coincide with diabetes diagnoses, emphasizing the connection between community demographics and health manifestations. Third, deep learning techniques are used on Jaeb Center blood glucose traces [[9]](https://public.jaeb.org/dataset/563) to develop a tool for tracking and alerting diabetic individuals of blood glucose spikes, thus creating a holistic view of diabetes patients pre- and post-diagnosis. All project methods emphasize the use of cheap data science techniques to refine and target diabetes disease burden control within the United States, with special emphasis on creating a holistic view of diabetes from a public health perspective. The findings of this project can then be used for efficient and effective targeted advocacy.
 
@@ -21,7 +21,8 @@ This capstone project is the creation of [**Temesgen Fekadu**](https://github.co
 5. **[Deep Learning](#deep-learning)**
 6. **[Visualizations](#visualizations)**
 7. **[Dash Deployment](#dash-deployment)**
-8. **[References](#references)**
+8. **[Results](#results)**
+9. **[References](#references)**
 
 <a name="datasets"></a>
 ## Datasets
@@ -159,6 +160,13 @@ For the maps, bar graphs, and line graphs, [plotly express](https://plotly.com/p
 `Dash` deploymen utilizes a combination of Python code and bootstrapping components, as documented [here](https://dash-bootstrap-components.opensource.faculty.ai/docs/components/).
 
 For the Deployment of `Dash` the most helpful resource has been [Adam Schroeder](https://www.linkedin.com/in/adam-schroeder-17b5a819/), a Community Manager at Plotly. His YouTube channel [Charming Data](https://www.youtube.com/c/CharmingData) provides a large sum of tutorials on all things `Dash`. For a specific tutorial on Dash Bootstrap see [this video](https://www.youtube.com/watch?v=0mfIK8zxUds).
+
+<a name="results"/></a>
+## Results
+
+You can find the results to this capstone project in two areas:
+1. [**`/project-specifications/ProjectTechnicalReport.pdf`:**]() Full explanation and summary of the project, including structure, methods, results, and recommendations.
+2. [**`/dashboard/app.py`:**](https://github.com/jackrlynn3/capstone-diabetes/blob/main/dashboard/app.py) Run this file in a Python interpreter to view this projects supporting Dashboard.
 
 <a name="references"/></a>
 ## References
