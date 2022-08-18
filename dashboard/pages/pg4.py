@@ -86,7 +86,7 @@ layout = html.Div(
                      {'label': '150,000 to 199,999', 'value': '150,000 to 199,999'},
                      {'label': '200,000 or more', 'value': '200,000 or more'},
                 ],
-                        value='Less than 10,000'),width=4
+                        value='25,000 to 34,999'),width=4
                 ),
                 dbc.Col(
                 dcc.Dropdown(id="slct_state2",
@@ -96,11 +96,11 @@ layout = html.Div(
                      {'label': 'Some college or associate degree', 'value': 'Some college or associate degree'},
                      {'label': 'Bachelors Degree', 'value': 'Bachelors Degree'},
                 ],
-                        value='Less than high school graduate'), width= 4
+                        value='High school graduate (includes equivalency)'), width= 4
                 ),
                 dbc.Col(
                 dcc.Dropdown(id="slct_state3", options =[{'label':x, 'value':x} for x in foodstates.sort_values('year')['year'].unique()],
-                        value=2003), width= 4
+                        value=2015), width= 4
                 ),
             ]
         ),
@@ -158,7 +158,7 @@ def update_graph(option_slctd):
         color='percent',
         hover_data=['stateID', 'percent'],
         color_continuous_scale=['#FFFF8F','#C41E3A'],
-        range_color=(0,25),
+        range_color=(0,15),
         labels={"stateID": "State",
                 'percent': "Percent"
         }
