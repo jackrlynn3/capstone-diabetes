@@ -163,7 +163,7 @@ layout = html.Div(
                             Tracking blood glucose levels is essential to modern diabetes care. Deep learning time
                             series models are used to predict blood glucose levels of Type-1 diabetes patients 30
                             min in the future. Additionally, patients are warned when their blood glucose levels
-                            exceed 180 mmol/L and 300 mmol/L, which are both markers for hazardous and dangerous
+                            exceed 180 mg/dL and 300 mg/dL, which are both markers for hazardous and dangerous
                             blood glucose levels, respectively.
                         ''')
                     ],
