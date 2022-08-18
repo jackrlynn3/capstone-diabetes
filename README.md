@@ -92,8 +92,8 @@ The procedures and findings of this project can be found in one of several repor
 2. [`ExploratoryQuestions.pdf`:](https://github.com/jackrlynn3/capstone-diabetes/blob/main/project-specifications/ExploratoryQuestions.pdf) Description of all essential exploratory questions that are answered by this project.
 3. [`RepeatableETLReport.pdf`:](https://github.com/jackrlynn3/capstone-diabetes/blob/main/project-specifications/RepeatableETLReport.pdf) In-depth description of ETL process to get from raw data sourcing to loaded SQL database.
 4. [`VisualizationsDashboardNapkinsAndFeedback.pdf`:](https://github.com/jackrlynn3/capstone-diabetes/blob/main/project-specifications/VisualizationsDashboardNapkinsAndFeedback.pdf) Napkin drawing for all dashboards used in the project and their respective peer feedback.
-5. [`ProjectTechnicalReport.pdf`](): Full report describing methods, results, and analysis of all methods within this project.
-6. [`CapstonePresentationSlides.pdf`](): Presentation slide deck describing the results of this project.
+5. [`ProjectTechnicalReport.pdf`](https://github.com/jackrlynn3/capstone-diabetes/blob/main/project-specifications/ProjectTechnicalReport.pdf): Full report describing methods, results, and analysis of all methods within this project.
+6. [`CapstonePresentationSlides.pdf`](https://github.com/jackrlynn3/capstone-diabetes/blob/main/project-specifications/CapstonePresentationSlides.pdf): Presentation slide deck describing the results of this project.
 
 <a name="sql-database"/></a>
 ## SQL Database
@@ -165,7 +165,7 @@ For the Deployment of `Dash` the most helpful resource has been [Adam Schroeder]
 ## Results
 
 You can find the results to this capstone project in two areas:
-1. [**`/project-specifications/ProjectTechnicalReport.pdf`:**]() Full explanation and summary of the project, including structure, methods, results, and recommendations.
+1. [**`/project-specifications/ProjectTechnicalReport.pdf`:**](https://github.com/jackrlynn3/capstone-diabetes/blob/main/project-specifications/ProjectTechnicalReport.pdf) Full explanation and summary of the project, including structure, methods, results, and recommendations.
 2. [**`/dashboard/app.py`:**](https://github.com/jackrlynn3/capstone-diabetes/blob/main/dashboard/app.py) Run this file in a Python interpreter to view this projects supporting Dashboard.
 
 <a name="references"/></a>
