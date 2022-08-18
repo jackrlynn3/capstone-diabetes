@@ -114,7 +114,7 @@ layout = html.Div(
     [
         dbc.Row(
             [
-                dcc.Markdown('#### National Health and Nutrition Survey (NHANES) Responders and Diabetes')
+                dcc.Markdown('#### National Health and Nutrition Examination Survey (NHANES) Responders and Diabetes')
             ],
         ),
         dbc.Row(
