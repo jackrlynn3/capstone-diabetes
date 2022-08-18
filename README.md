@@ -152,7 +152,7 @@ For the visualization of the Machine Learning model, [seaborne](https://seaborn.
 
 The images of the Deep Learning model were created inside of [Google Colab](https://colab.research.google.com/?utm_source=scs-index) using `matplotlib` directly and exported as `.png` files to Github where there raw image urls are directly referenced in the code. These images can be found [here](https://github.com/jackrlynn3/capstone-diabetes/tree/main/visualizations/machine-learning).
 
-For the maps, bar graphs, and line graphs, [plotly express](https://plotly.com/python/plotly-express/) is utilized for its native integration with [`Dash`],(https://plotly.com/dash/) a product created by Plotly. A rough overview of `plotly` graphs and their implementation can be found [here](https://plotly.com/python/plotly-express/#gallery).
+For the maps, bar graphs, and line graphs, [plotly express](https://plotly.com/python/plotly-express/) is utilized for its native integration with [`Dash`](https://plotly.com/dash/), a product created by Plotly. A rough overview of `plotly` graphs and their implementation can be found [here](https://plotly.com/python/plotly-express/#gallery).
 
 <a name="website-deployment"/></a>
 ## Dash Deployment
