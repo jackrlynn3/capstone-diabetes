@@ -7,7 +7,7 @@ import dash_bootstrap_components as dbc
 import pandas as pd
 import pymssql
 
-conn = pymssql.connect("gen10-data-fundamentals-22-05-sql-server.database.windows.net","haydenmuscha","P3ngu!ns87","group5database")
+conn = pymssql.connect("gen10-data-fundamentals-22-05-sql-server.database.windows.net","haydenmuscha","redacted","group5database")
 
 query = f'SELECT * FROM CensusStat'
 df1 = pd.read_sql(query, conn)
