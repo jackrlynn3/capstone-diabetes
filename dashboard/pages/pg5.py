@@ -14,7 +14,7 @@ from datetime import datetime as dt
 
 dash.register_page(__name__, name='Personal Glucose Readings')
 
-conn = pymssql.connect("gen10-data-fundamentals-22-05-sql-server.database.windows.net","haydenmuscha","P3ngu!ns87","group5database")
+conn = pymssql.connect("gen10-data-fundamentals-22-05-sql-server.database.windows.net","haydenmuscha","redacted","group5database")
 
 cursor = conn.cursor()
 
